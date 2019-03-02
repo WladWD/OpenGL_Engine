@@ -1,0 +1,62 @@
+//#version 440 core
+////////////////////////////////////////////////////
+#ifdef NOT_USE_CLIP_ALPHA
+layout(early_fragment_tests) in;
+#endif
+////////////////////////////////////////////////////
+in struct VertexOut
+{
+	vec3 w_pos;
+	vec3 w_normal;
+	vec3 w_eye_dir;
+	vec2 w_tex;
+} vertex_out;
+////////////////////////////////////////////////////
+layout (location = 0)uniform mat4 g_proj_view;
+layout (location = 1)uniform vec3 g_cam_pos;
+////////////////////////////////////////////////////
+layout (location = 2)uniform vec4 m_diffuse;
+layout (location = 3)uniform vec4 m_specular;
+layout (location = 4)uniform vec4 m_emissive;
+////////////////////////////////////////////////////
+layout (location = 5, binding = 0)uniform sampler2D g_diffuse;
+layout (location = 6, binding = 1)uniform sampler2D g_specular;//only red chanel
+////////////////////////////////////////////////////
+//PBR
+layout (location = 8)uniform vec4 m_PBR;//Mettalic; Roughness; F0
+////////////////////////////////////////////////////
+layout (location = 0) out vec4 out_color_0;//normal r16g16  unorm //vec4
+layout (location = 1) out vec4 out_color_1;//diffuse r8g8b8a8, a - specular intensity
+layout (location = 2) out vec4 out_color_2;//specular r8g8b8a8, a - specular power, but spec power = a*255.0f;
+layout (location = 3) out vec4 out_color_3;//PBR Mettalic; Roughness; F0
+////////////////////////////////////////////////////
+void main()
+{
+	vec3 normal   = normalize(vertex_out.w_normal);
+	vec3 viewDir  = normalize(-vertex_out.w_eye_dir);
+
+	vec4 diff_tex_color = texture(g_diffuse, vertex_out.w_tex);
+	float spec_val = texture(g_specular, vertex_out.w_tex).r;
+
+#ifndef USE_NO_CLIP_ALPHA 
+if(diff_tex_color.a < 0.6f)discard;
+#endif
+
+
+#ifdef USE_NO_CLIP_ALPHA 
+//if(!gl_FrontFacing)normal = -normal;
+#endif
+
+
+	//normal = vec3(0.5f)*normal + vec3(0.5f);
+	out_color_0.xyz = normal;
+	out_color_0.a = m_specular.a;
+	//normal.z = sqrt(1 - dot(vec3(out_color_0.xy, 0.0f)));
+	out_color_1 = m_diffuse * diff_tex_color;// * (m_diffuse.a + 1.0f);// + m_emissive;
+	out_color_1.a = m_diffuse.a;
+	//out_color_1.a = spec_val;
+	out_color_2 = m_specular;
+	out_color_2.a = spec_val;// /= 255.0f;
+
+	out_color_3.xyz = m_PBR.xyz;
+}

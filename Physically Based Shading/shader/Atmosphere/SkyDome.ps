@@ -1,0 +1,104 @@
+#version 440 core
+////////////////////////////////////////////////////
+layout(early_fragment_tests) in;
+////////////////////////////////////////////////////
+#define msv 1.0f / (2800.0f * 128.0f * 100.0f)
+////////////////////////////////////////////////////
+in struct FS_INPUT
+{
+	vec3 w_pos;
+	vec2 w_tex0;
+	vec3 w_tex1;
+} fs_input;
+////////////////////////////////////////////////////
+layout (location = 0) uniform mat4 g_proj_view_world;
+layout (location = 1) uniform float InvOpticalDepthNLessOne;// = 1.0f/255.0f;
+layout (location = 2) uniform float InvOpticalDepthN;//  = 1.0f/256.0f;
+layout (location = 3) uniform float InnerRadius;//  = 6356.7523142;
+layout (location = 4) uniform float OuterRadius;//  = 6356.7523142 * 1.0157313;
+layout (location = 5) uniform float PI;//  = 3.1415159;
+layout (location = 6) uniform float NumSamples;//  = 20;
+layout (location = 7) uniform float fScale;//  = 1.0 / (6356.7523142 * 1.0157313 - 6356.7523142);
+layout (location = 8) uniform vec2 v2dRayleighMieScaleHeight;//  = vec2(0.25, 0.1);
+////////////////////////////////////////////////////
+layout (location = 9) uniform vec2 InvRayleighMieNLessOne;//  = vec2(1.0f/255.0f, 1.0f/127.0f);
+layout (location = 10) uniform vec3 v3SunDir;//  = vec3( 0, 1, 0 );
+//float ESun = 20.0f;
+//float Kr = 0.0025f;
+//float Km = 0.0010f;
+layout (location = 11) uniform float KrESun;//  = 0.0025f * 20.0f;
+layout (location = 12) uniform float KmESun;//  = 0.0010f * 20.0f;
+layout (location = 13) uniform float Kr4PI;//  = 0.0025f * 4.0f * 3.1415159;
+layout (location = 14) uniform float Km4PI;//  = 0.0010f * 4.0f * 3.1415159;
+////////////////////////////////////////////////////
+layout (location = 15) uniform float g;//  = -0.990;
+layout (location = 16) uniform float g2;//  = (-0.990) * (-0.990);
+layout (location = 17) uniform float fExposure;//  = -2.0;
+////////////////////////////////////////////////////
+layout (location = 18) uniform vec3 InvWavelength;
+layout (location = 19) uniform vec3 WavelengthMie;
+////////////////////////////////////////////////////
+layout (location = 20) uniform float starIntensity;//  = 0.5f;
+////////////////////////////////////////////////////
+layout (location = 21, binding = 0) uniform sampler2D RayLeighTexture;
+layout (location = 22, binding = 1) uniform sampler2D MieTexture;
+layout (location = 23, binding = 2) uniform sampler2D StarTexture;//sampler2D samplerCube
+////////////////////////////////////////////////////
+float getRayleighPhase(float fCos2)
+{
+	return 0.75f * (1.0f + fCos2);
+}
+
+float getMiePhase(float fCos, float fCos2)
+{
+	vec3 v3HG;
+	v3HG.x = 1.5f * ( (1.0f - g2) / (2.0f + g2) );
+	v3HG.y = 1.0f + g2;
+	v3HG.z = 2.0f * g;
+	return (v3HG.x * (1.0 + fCos2)) / (pow(v3HG.y - (v3HG.z * fCos), 1.5));
+}
+
+vec3 HDR( vec3 LDR)
+{
+	return vec3(1.0f) - exp( fExposure * LDR );
+}
+////////////////////////////////////////////////////
+layout (location = 0) out vec4 SkyColor;
+////////////////////////////////////////////////////
+void main()
+{
+	float fCos = -clamp(dot( normalize(v3SunDir), fs_input.w_tex1 ) / length( fs_input.w_tex1 ), 0.0f, 1.0f);
+	float fCos2 = fCos * fCos;
+	
+	vec3 v3RayleighSamples = texture(RayLeighTexture, fs_input.w_tex0).xyz;
+	vec3 v3MieSamples = texture(MieTexture, fs_input.w_tex0).xyz;
+	//v3MieSamples.yz = texture(MieTexture, fs_input.w_tex0).xy;
+	//v3MieSamples.x = v3RayleighSamples.w;
+
+	vec3 Color;
+	Color.rgb = getRayleighPhase(fCos2) * v3RayleighSamples.rgb + getMiePhase(fCos, fCos2) * v3MieSamples.rgb;
+	Color.rgb = HDR( Color.rgb );
+	
+	// Hack Sky Night Color
+	Color.rgb += max(vec3(0.0f), (vec3(1.0f) - Color.rgb)) * vec3( 0.05, 0.05, 0.1 ); 
+
+	vec2 m_star_tex1 = fs_input.w_tex1.xz * msv * 1.4f;// * 2.0f;
+	vec2 m_star_tex2 = fs_input.w_tex0 * vec2(3.2f, 6.4f);//6.0f);
+	vec4 star_tex1 = texture(StarTexture, m_star_tex1);// * 1.2f;//textureLod texture
+	vec4 star_tex2 = texture(StarTexture, m_star_tex2) ;//* 2.2f;
+
+	float hv = clamp(fs_input.w_tex1.y * msv + 0.2, 0.0f, 1.0f);
+	float t_a = pow(hv, 0.23f);//hv;//sqrt(hv);//pow(hv, 2.0f);
+
+	t_a = t_a >= 0.98f ? t_a : t_a * 0.021f;
+
+	vec4 m_star_tex = (star_tex1 * t_a + (1.0f - t_a) * star_tex2) * 1.8f;
+
+	m_star_tex = pow(m_star_tex, vec4(4.00041f));// * m_star_tex;
+
+	SkyColor = vec4( Color.rgb, 1.0f ) + m_star_tex * starIntensity;//texture(StarTexture, fs_input.w_tex0) * starIntensity;  //fs_input.w_tex0 w_tex1 textureLod  texture
+	SkyColor.a = 1.0f;
+}
+
+
+

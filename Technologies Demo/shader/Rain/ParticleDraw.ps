@@ -1,0 +1,32 @@
+#version 440 core
+////////////////////////////////////////////////////
+////////////////////////////////////////////////////
+in vec2 ps_in_tex;
+in vec3 ps_in_pos;
+in flat uint ps_in_tex_id;
+////////////////////////////////////////////////////
+layout (location = 5)uniform vec4 g_SunLight;
+layout (location = 6)uniform vec4 g_MoonLight;
+layout (location = 7, binding = 0)uniform sampler2DArray g_drop_array;
+////////////////////////////////////////////////////
+layout (location = 0) out vec4 res_color;
+////////////////////////////////////////////////////
+void main()
+{
+	vec4 tex_color = textureLod(g_drop_array, vec3(ps_in_tex, ps_in_tex_id), 0.0) + textureLod(g_drop_array, vec3(ps_in_tex, (ps_in_tex_id+5)%370), 0.0);//textureLod texture
+	
+	vec4 tex_color_ms = textureLod(g_drop_array, vec3(ps_in_tex, (ps_in_tex_id+3)%370), 0.0);
+	tex_color = tex_color + tex_color * tex_color_ms;
+	vec3 color_drop = vec3(g_MoonLight.rgb * g_MoonLight.a + g_SunLight.rgb * (1.0f-g_MoonLight.a));//vec3(1.0f) *( g_SunLight.rgb * g_SunLight.a + g_MoonLight.rgb * g_MoonLight.a );
+	//color_drop *= pow(tex_color.r, 0.0000004f);
+	res_color = vec4(color_drop, 0.13f * pow(tex_color.r, 1.00000984749f));//pow(tex_color.r, 0.4749f)); //0.1 0.27f
+	//vec4(color_drop, 0.18f*pow(tex_color.r, 0.27f)); ----- // снегообразный дождь
+	// 0.1f*0.9f*0.27f);
+
+	//vec4(color_drop, 0.127f * pow(tex_color.r, 1.00000984749f)); - best 
+
+	res_color.rgb = pow(res_color.rgb, vec3(0.1f));
+}
+//vec4(vec3(float(ps_in_tex_id) / 370.0f, 0.0f, 0.0f), 0.8f* tex_color.r);//
+//0.2f*0.9f*0.27f
+// 0.2f*0.18f*

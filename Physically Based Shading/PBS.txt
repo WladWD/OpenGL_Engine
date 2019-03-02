@@ -1,0 +1,2 @@
+https://learnopengl.com/#!PBR/Theory
+http://www.trentreed.net/blog/physically-based-shading-and-image-based-lighting/

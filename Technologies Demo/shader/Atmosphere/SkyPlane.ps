@@ -1,0 +1,51 @@
+#version 440 core
+////////////////////////////////////////////////////
+layout(early_fragment_tests) in;
+////////////////////////////////////////////////////
+in struct FS_INPUT
+{
+	vec3 w_pos;
+	vec2 TexCoord;
+} fs_input;
+////////////////////////////////////////////////////
+layout (location = 0) uniform mat4 g_proj_view;
+layout (location = 1) uniform vec3 g_offset_vec;
+layout (location = 2) uniform vec3 g_cloud_color;
+layout (location = 3) uniform float CloudCover;
+layout (location = 4) uniform float CloudSharpness;
+////////////////////////////////////////////////////
+layout (location = 5, binding = 0) uniform sampler2D CloudTexture;
+////////////////////////////////////////////////////
+layout (location = 0) out vec4 SkyColor;
+////////////////////////////////////////////////////
+vec4 mSample(vec2 tex)
+{
+    vec4 perlin =	texture(CloudTexture,		vec2(tex)		  +  g_offset_vec.xy);
+    perlin +=		texture(CloudTexture,		vec2(tex*2.0f)  +  g_offset_vec.xy)/2.0f;
+    perlin +=		texture(CloudTexture,		vec2(tex*4.0f)  +  g_offset_vec.xy)/4.0f;
+    perlin +=		texture(CloudTexture,		vec2(tex*8.0f)  +  g_offset_vec.xy)/8.0f;
+    perlin +=		texture(CloudTexture,		vec2(tex*16.0f) +  g_offset_vec.xy)/16.0f;
+    perlin +=		texture(CloudTexture,		vec2(tex*32.0f) +  g_offset_vec.xy)/32.0f;
+	//perlin +=		texture(CloudTexture,		vec2(tex*64.0f) +  g_offset_vec.xy)/64.0f;
+    //perlin +=		texture(CloudTexture,		vec2(tex*128.0f) +  g_offset_vec.xy)/128.0f;
+
+	float nFinal = perlin.r;
+	
+	float c = CloudCover - nFinal;
+    if (c < 0) c = 0;
+ 
+    float CloudDensity = 1.0 - pow(CloudSharpness,c);
+    vec4 CloudColor = vec4(CloudDensity);
+	CloudColor.a = pow(CloudDensity, 70.8f);//10.81f);
+	return CloudColor;
+}
+////////////////////////////////////////////////////
+void main()
+{
+	SkyColor  = mSample(fs_input.TexCoord);
+	SkyColor.rgb *= g_cloud_color;
+	SkyColor.rgb = pow(SkyColor.rgb, vec3(1.2f));
+}
+
+
+

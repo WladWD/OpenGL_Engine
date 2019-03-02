@@ -1,0 +1,12 @@
+#version 440 core
+////////////////////////////////////////////////////
+layout (location = 0) in vec2 v_tex;
+////////////////////////////////////////////////////
+out vec2 gTex;
+////////////////////////////////////////////////////
+void main()
+{
+	gTex = v_tex;
+	vec3 vWPosition = vec3(v_tex * vec2(2.0f) + vec2(-1.0f), 0.0f);
+	gl_Position = vec4(vWPosition, 1.0f);
+}

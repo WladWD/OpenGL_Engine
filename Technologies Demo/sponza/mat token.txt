@@ -1,0 +1,14 @@
+Material specific token
+static const std::string DiffuseTexture      = "map_Kd";//diffuse map
+static const std::string AmbientTexture      = "map_Ka";
+static const std::string SpecularTexture     = "map_Ks";//specular map
+static const std::string OpacityTexture      = "map_d";
+static const std::string EmmissiveTexture    = "map_emissive";//используеться как reflaction map
+static const std::string EmmissiveTexture_1  = "map_Ke";
+static const std::string BumpTexture1        = "map_bump";
+static const std::string BumpTexture2        = "map_Bump";
+static const std::string BumpTexture3        = "bump";
+static const std::string NormalTexture       = "map_Kn";//normal map
+static const std::string ReflectionTexture   = "refl";
+static const std::string DisplacementTexture = "disp";
+static const std::string SpecularityTexture = "map_ns";

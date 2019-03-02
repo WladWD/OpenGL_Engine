@@ -1,0 +1,63 @@
+#version 440 core
+////////////////////////////////////////////////////
+in struct VertexOut
+{
+	vec3 out_v_pos;
+	vec3 out_v_normal;
+	vec2 out_v_tex;
+} vertex_out;
+////////////////////////////////////////////////////
+layout (location = 0)uniform mat4 proj_view_world;
+layout (location = 1)uniform vec3 g_cam_pos;
+////////////////////////////////////////////////////
+layout (location = 2)uniform vec4 diffuse;
+layout (location = 3)uniform vec4 specular;
+layout (location = 4)uniform vec4 emissive;
+////////////////////////////////////////////////////
+layout (location = 5, binding = 0)uniform sampler2D g_diffuse;//sampler2D samplerCube
+//uniform sampler2D g_normal;
+//uniform sampler2D g_reflaction; in Alpha save - specular intensivity (reflaction intensyviti), in rgb - reflaction
+////////////////////////////////////////////////////
+layout (location = 6)uniform vec3 g_lightDir;//mast be normalize
+layout (location = 7)uniform vec4 g_lightAmbient;
+layout (location = 8)uniform vec4 g_lightDiffuse;
+layout (location = 9)uniform vec4 g_lightSpecular;
+////////////////////////////////////////////////////
+vec4 comp_ambient()
+{
+	vec4 ambient = diffuse * g_lightAmbient * diffuse.a;
+	return vec4(ambient.rgb, 1.0f);
+}
+
+vec4 comp_diffuse(vec3 normal, vec3 lightDir)
+{
+	float NdotL = max(dot(normal, lightDir), 0.0);
+	return diffuse * g_lightDiffuse * NdotL;
+}
+
+vec4 comp_spec(vec3 normal, vec3 viewDir, vec3 lightDir)
+{
+	float RdotVpow = max(pow(dot(reflect(-lightDir, normal), viewDir), specular.a), 0.0);
+	return specular * g_lightSpecular * RdotVpow;
+}
+////////////////////////////////////////////////////
+layout (location = 0) out vec4 res_color;
+////////////////////////////////////////////////////
+void main()
+{
+	vec3 normal   = normalize(vertex_out.out_v_normal);
+	vec3 viewDir  = normalize(g_cam_pos - vertex_out.out_v_pos);
+	vec3 lightDir = normalize(-g_lightDir);
+
+	//vec3 cb_vec = reflect(-viewDir, normal);
+	//cb_vec.y = -cb_vec.y;
+	vec4 tex_diff = texture(g_diffuse, vertex_out.out_v_tex);//cb_vec);
+
+	if(tex_diff.a < 0.6f) discard;
+
+	res_color = emissive;
+	res_color += (comp_ambient() + comp_diffuse(normal, lightDir)) * tex_diff;
+	res_color += comp_spec(normal, viewDir, lightDir);
+
+	res_color = vec4(res_color.rgb, 1.0f);
+}

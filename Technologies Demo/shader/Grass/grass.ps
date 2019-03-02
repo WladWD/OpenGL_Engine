@@ -1,0 +1,100 @@
+#version 440 core
+////////////////////////////////////////////////////
+//layout(early_fragment_tests) in;
+//////////////////////////////////////////////////// 
+//(2800.0f * 128.0f * 100.0f)
+#define MCV (2800.0f * 128.0f * 100.0f)
+#define FOG_START (280.0f * 128.0f)//128.0f * 60.0f)
+#define FOR_RANGE (2800.0f * 128.0f  )//* 128.0f * 80.0f)
+////////////////////////////////////////////////////
+in struct VertexOut
+{
+	vec3 w_pos;
+	vec3 w_eye_dir;
+	vec2 w_tex;
+} vertex_out;
+////////////////////////////////////////////////////
+layout (location = 0)uniform mat4 gWorld;
+layout (location = 1)uniform mat4 gProjView;
+layout (location = 2)uniform vec3 g_cam_pos;
+////////////////////////////////////////////////////
+layout (location = 3)uniform vec4 m_diffuse;
+layout (location = 4)uniform vec4 m_specular;
+layout (location = 5)uniform vec4 m_emissive;
+////////////////////////////////////////////////////
+layout (location = 6)uniform vec3 g_lightDir;//mast by normalize
+layout (location = 7)uniform vec4 g_lightDiffuse;
+layout (location = 8)uniform vec4 g_lightSpecular;
+layout (location = 9)uniform float g_StarIntensity;
+////////////////////////////////////////////////////
+layout (location = 10, binding = 0)uniform sampler2D g_diffuse;
+layout (location = 11, binding = 1)uniform sampler2D g_normal;
+////////////////////////////////////////////////////
+vec4 comp_ambient()
+{
+	vec4 ambient = m_diffuse * g_lightDiffuse * m_diffuse.a * g_lightDiffuse.a;
+	return vec4(ambient.rgb, 1.0f);
+}
+
+vec4 comp_diffuse(vec3 normal, vec3 lightDir)
+{
+	float NdotL = max(dot(normal, lightDir), 0.0);
+	return m_diffuse * g_lightDiffuse * NdotL;
+}
+
+vec4 comp_spec(vec3 normal, vec3 viewDir, vec3 lightDir)
+{
+	float RdotVpow = max(pow(dot(reflect(-lightDir, normal), viewDir), m_specular.a), 0.0);
+	return m_specular * g_lightSpecular * RdotVpow;
+}
+////////////////////////////////////////////////////
+vec3 ComputeBumpNormal(vec3 bump_map_normal, vec3 normal, vec3 tangent)
+{
+	vec3 Normal0 = normalize(normal);
+	vec3 Tangent0 = normalize(tangent);
+	Tangent0 = normalize(Tangent0 - (dot(Tangent0, Normal0) * Normal0));
+	vec3 BiNormal0 = cross(Tangent0, Normal0);
+
+	bump_map_normal = (bump_map_normal * 2.0f) - vec3(1.0f);
+	bump_map_normal = normalize(bump_map_normal);
+	vec3 Normal_Computed;
+	mat3 TBN = mat3(Tangent0, BiNormal0, Normal0);
+	Normal_Computed = TBN * bump_map_normal;
+	Normal_Computed = normalize(Normal_Computed);
+	return Normal_Computed;
+}
+////////////////////////////////////////////////////
+vec3 ColorFog(vec3 mcolor, vec3 pos)
+{
+	float dist = length(pos.xz);
+	float t = clamp(((dist - FOG_START) / FOR_RANGE), 0.0f, 1.0f);
+	return mcolor * (1.0f - t) + g_lightDiffuse.rgb * t;
+}
+////////////////////////////////////////////////////
+layout (location = 0) out vec4 res_color;
+////////////////////////////////////////////////////
+void main()
+{
+	vec3 normal = vec3(0.0f, 1.0f, 0.0f);
+	vec3 viewDir  = normalize(-vertex_out.w_eye_dir);
+	vec3 lightDir = normalize(-g_lightDir);
+
+
+	//dvec2 mtex = vertex_out.w_posdw.xy;//dvec2(0.5f)*(vertex_out.w_posdw.xz) + dvec2(0.5f);
+
+	//mtex *= 2.0;//MCV;
+	//mtex = mtex - dvec2(int(mtex.x), int(mtex.y));
+
+	//vec4 diff_tex_color = texture(g_diffuse, mtex * 1200000);//vertex_out.w_pos.xz );//vertex_out.w_tex);
+	//vec4 normalmap_normal = texture(g_normal, vertex_out.w_tex);
+
+	//if(diff_tex_color.a < 0.6f)discard;
+
+	//normal = ComputeBumpNormal(normalmap_normal.xyz, vec3(0.0f, 1.0f, 0.0f), vec3(1.0f, 0.0f, 0.0f));
+
+	res_color = vec4(0.0f, 0.0f, 0.0f, 1.0f);
+	res_color += (comp_ambient() + comp_diffuse(normal, lightDir));// * diff_tex_color;
+	res_color += comp_spec(normal, viewDir, lightDir);
+	//- ivec2(vertex_out.w_tex)
+	res_color = vec4(ColorFog(res_color.rgb, vertex_out.w_pos), 1.0f);//vec4(res_color.rgb, 1.0f);
+}

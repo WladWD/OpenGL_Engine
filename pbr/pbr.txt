@@ -1,0 +1,11 @@
+https://habrahabr.ru/company/mailru/blog/248873/
+http://www.trentreed.net/blog/physically-based-shading-and-image-based-lighting/
+https://chetanjags.wordpress.com/2015/08/26/image-based-lighting/
+http://steps3d.narod.ru/tutorials/lighting-tutorial.html
+
+http://blog.selfshadow.com/publications/s2014-shading-course/
+http://www.codinglabs.net/article_physically_based_rendering_cook_torrance.aspx
+http://graphicrants.blogspot.ru/2013/08/specular-brdf-reference.html
+
+
+http://www.gamegossip.com/news/64648832/UE4_IBL_glsl

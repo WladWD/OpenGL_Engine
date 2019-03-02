@@ -1,0 +1,24 @@
+#version 440 core
+////////////////////////////////////////////////////
+in struct FS_INPUT
+{
+	vec3 w_pos;
+	vec2 w_tex;
+} fs_input;
+////////////////////////////////////////////////////
+layout (location = 0) uniform mat4 g_proj_view_world;
+layout (location = 1) uniform mat4 g_world;
+layout (location = 2) uniform float g_alpha;
+////////////////////////////////////////////////////
+layout (location = 3, binding = 0) uniform sampler2D MTexture;
+////////////////////////////////////////////////////
+layout (location = 0) out vec4 Color;
+////////////////////////////////////////////////////
+void main()
+{
+	Color = texture(MTexture, fs_input.w_tex);
+	Color.a *= g_alpha;
+}
+
+
+

@@ -1,0 +1,18 @@
+﻿  AtmosphereParameter.cpp
+  Engine.cpp
+d:\vs2015 project\technologies demo\technologies demo\LightStructs.h(45): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+d:\vs2015 project\technologies demo\technologies demo\LightStructs.h(46): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+d:\vs2015 project\technologies demo\technologies demo\LightStructs.h(47): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+d:\vs2015 project\technologies demo\technologies demo\LightStructs.h(48): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+Engine.cpp(5): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+Engine.cpp(177): warning C4244: аргумент: преобразование "long double" в "float", возможна потеря данных
+Engine.cpp(183): warning C4244: аргумент: преобразование "long double" в "float", возможна потеря данных
+LINK : warning LNK4098: библиотека по умолчанию "LIBCMT" противоречит использованию других библиотек; используйте параметр /NODEFAULTLIB:library
+  Создание кода
+  128 of 2162 functions ( 5.9%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    60 functions had inline decision re-evaluated but remain unchanged
+  Создание кода завершено
+glew32s.lib(glew.obj) : warning LNK4099: "vc120.pdb" PDB не найден с "glew32s.lib(glew.obj)" или на "D:\VS2015 Project\Technologies Demo\x64\Release\vc120.pdb"; компоновка объекта выполняется как при отсутствии отладочных данных
+  Technologies Demo.vcxproj -> D:\VS2015 Project\Technologies Demo\x64\Release\Technologies Demo.exe
+  Technologies Demo.vcxproj -> D:\VS2015 Project\Technologies Demo\x64\Release\Technologies Demo.pdb (Full PDB)

@@ -1,0 +1,56 @@
+int and(int a, int b)
+{
+	int c = 0;
+	for (int x = 0; x <= 31; ++x)
+	{
+		c += c;
+		c += int((a < 0) && (b < 0));
+		a += a;
+		b += b;
+	}
+	return c;
+}
+
+int or (int a, int b)
+{
+	int c = 0;
+	for (int x = 0; x <= 31; ++x)
+	{
+		c += c;
+		if (a < 0)
+		{
+			c += 1;
+		}
+		else if (b < 0)
+		{
+			c += 1;
+		}
+		a += a;
+		b += b;
+	}
+	return c;
+}
+
+float radicalInverse_VdC(int bits)
+{
+	bits = or(bits * 65536, bits / 65536);
+	bits = or(and(bits, 0x55555555) *   2, and(bits, 0xAAAAAAAA) /   2);
+	bits = or(and(bits, 0x33333333) *   4, and(bits, 0xCCCCCCCC) /   4);
+	bits = or(and(bits, 0x0F0F0F0F) *  16, and(bits, 0xF0F0F0F0) /  16);
+	bits = or(and(bits, 0x00FF00FF) * 256, and(bits, 0xFF00FF00) / 256);
+	return abs(float(bits) * 2.3283064365386963e-10);
+}
+
+vec2 Hammersley(int i, int n)
+{
+    return vec2(float(i) / float(n), radicalInverse_VdC(i));
+}
+
+void mainImage( out vec4 fragColor, in vec2 fragCoord )
+{
+    const int numSamples = 1024;
+    
+	vec2 uv = fragCoord.xy / iResolution.xy;
+	
+    fragColor = vec4(Hammersley(int(uv.x * float(numSamples)), numSamples), 0.0, 1.0);
+}

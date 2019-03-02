@@ -1,0 +1,37 @@
+#include "DrawSkyDome.h"
+#include "DrawSkyQuad.h"
+
+#pragma once
+namespace Atmosphere
+{
+	class DrawSky
+	{
+		/////////////////////////////////////////////////////////////////////////////////////
+		Resource::MapResource *texture_map;
+		/////////////////////////////////////////////////////////////////////////////////////
+		const uint32_t tex_width;
+		const uint32_t tex_height;
+		/////////////////////////////////////////////////////////////////////////////////////
+		GLuint star_texture_id;
+		GLuint moon_texture_id;
+		GLuint moonglow_texture_id;
+		/////////////////////////////////////////////////////////////////////////////////////
+		Atmosphere::AtmosphereParameter *mvatmosphere_parameter;
+		/////////////////////////////////////////////////////////////////////////////////////
+		GLuint FrameBuffer_Update;
+		GLuint RayLeighTexture;
+		GLuint MieTexture;
+		/////////////////////////////////////////////////////////////////////////////////////
+		DrawSkyDome *draw_sky_dome;
+		DrawSkyQuad *draw_sky_quad;
+		/////////////////////////////////////////////////////////////////////////////////////
+		void InitFramebuffer(void);
+		void UpdateRayLeighMieTexture(const Atmosphere::GlobalLightingParam *atmosphere_parameter);
+	public:
+		DrawSky(Atmosphere::AtmosphereParameter *atmosphere_parameter, Resource::MapResource *texture_map);
+		~DrawSky();
+
+		void Draw(glm::mat4 pvw, glm::vec3 cam_pos, const Atmosphere::GlobalLightingParam *atmosphere_parameter);
+	};
+}
+

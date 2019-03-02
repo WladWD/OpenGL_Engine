@@ -1,0 +1,22 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(368,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  DirectXTexUtil.cpp
+  BC.cpp
+  BC4BC5.cpp
+  BC6HBC7.cpp
+  BCDirectCompute.cpp
+  DirectXTexCompress.cpp
+  DirectXTexCompressGPU.cpp
+  DirectXTexConvert.cpp
+  DirectXTexD3D11.cpp
+  DirectXTexDDS.cpp
+  DirectXTexFlipRotate.cpp
+  DirectXTexImage.cpp
+  DirectXTexMipMaps.cpp
+  DirectXTexMisc.cpp
+  DirectXTexNormalMaps.cpp
+  DirectXTexPMAlpha.cpp
+  DirectXTexResize.cpp
+  DirectXTexTGA.cpp
+  DirectXTexWIC.cpp
+  Создание кода...
+  DirectXTex_Desktop_2015.vcxproj -> C:\Users\User\documents\visual studio 2015\Projects\NGEngine_X\DirectXTex\..\OpenGLEngineW\OpenGLEngineW\bin\x86\Debug\DirectXTex.lib

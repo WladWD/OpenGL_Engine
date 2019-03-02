@@ -1,0 +1,33 @@
+#include "FullScreenQuad.h"
+#include "ShaderSSR.h"
+#include "MCamera.h"
+
+#pragma once
+namespace Draw
+{
+	class DrawSSR
+	{
+		///////////////////////////////////////////////////////////////
+		MCamera::Camera *mCamera;
+		///////////////////////////////////////////////////////////////
+		Shader::ShaderSSR *mShaderSSR;
+		///////////////////////////////////////////////////////////////
+		FullScreenQuad *mFullScreenQuad;
+		///////////////////////////////////////////////////////////////
+		void InitAttrib(void);
+		///////////////////////////////////////////////////////////////
+		void Init(void);
+	public:
+		DrawSSR(FullScreenQuad *mFullScreenQuad, MCamera::Camera *mCamera);
+		~DrawSSR();
+		///////////////////////////////////////////////////////////////
+		void DrawSSRData(GLuint gSourceDepth, GLuint gSourceImage,
+			GLuint gDepth, GLuint gNormal, GLuint gDiffuse, GLuint gSpecular, glm::mat4 gProjView_Source);
+		///////////////////////////////////////////////////////////////
+	};
+}
+
+//shader
+//fullscreen quad buffer
+//camera
+//and prev draw set finalframebuffer

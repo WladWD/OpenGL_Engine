@@ -1,0 +1,205 @@
+﻿  AtmosphereParameter.cpp
+  DeferredDrawVNT.cpp
+  DeferredDrawVNTT.cpp
+DeferredDrawVNTT.cpp(39): warning C4312: приведение типов: преобразование из "const uint32_t" в "const void *" большего размера
+DeferredDrawVNTT.cpp(40): warning C4312: приведение типов: преобразование из "const uint32_t" в "const void *" большего размера
+DeferredDrawVNTT.cpp(41): warning C4312: приведение типов: преобразование из "const uint32_t" в "const void *" большего размера
+  DrawCloud.cpp
+DrawCloud.cpp(45): warning C4554: >>: проверьте порядок применения операторов на наличие ошибки; для четкого задания порядка используйте скобки
+DrawCloud.cpp(69): warning C4018: <: несоответствие типов со знаком и без знака
+DrawCloud.cpp(71): warning C4018: <: несоответствие типов со знаком и без знака
+DrawCloud.cpp(102): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+DrawCloud.cpp(103): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+DrawCloud.cpp(110): warning C4018: <: несоответствие типов со знаком и без знака
+DrawCloud.cpp(112): warning C4018: <: несоответствие типов со знаком и без знака
+DrawCloud.cpp(277): warning C4244: return: преобразование "double" в "uint8_t", возможна потеря данных
+  DrawGBuffer.cpp
+  DrawGrass.cpp
+DrawGrass.cpp(19): warning C4244: аргумент: преобразование "double" в "const float", возможна потеря данных
+  DrawParticles.cpp
+DrawParticles.cpp(44): warning C4312: приведение типов: преобразование из "uint32_t" в "const void *" большего размера
+DrawParticles.cpp(45): warning C4312: приведение типов: преобразование из "uint32_t" в "const void *" большего размера
+DrawParticles.cpp(46): warning C4312: приведение типов: преобразование из "uint32_t" в "const void *" большего размера
+DrawParticles.cpp(114): warning C4244: аргумент: преобразование "float" в "GLsizei", возможна потеря данных
+  DrawSky.cpp
+  DrawSkyDome.cpp
+DrawSkyDome.cpp(43): warning C4018: <: несоответствие типов со знаком и без знака
+DrawSkyDome.cpp(47): warning C4018: <: несоответствие типов со знаком и без знака
+DrawSkyDome.cpp(63): warning C4018: <: несоответствие типов со знаком и без знака
+DrawSkyDome.cpp(67): warning C4018: <: несоответствие типов со знаком и без знака
+DrawSkyDome.cpp(85): warning C4018: <: несоответствие типов со знаком и без знака
+DrawSkyDome.cpp(87): warning C4018: <: несоответствие типов со знаком и без знака
+DrawSkyDome.cpp(99): warning C4018: <: несоответствие типов со знаком и без знака
+DrawSkyDome.cpp(101): warning C4018: <: несоответствие типов со знаком и без знака
+  DrawSkyQuad.cpp
+  DrawVNT.cpp
+  DrawVNTT.cpp
+DrawVNTT.cpp(34): warning C4312: приведение типов: преобразование из "uint32_t" в "const void *" большего размера
+DrawVNTT.cpp(35): warning C4312: приведение типов: преобразование из "uint32_t" в "const void *" большего размера
+DrawVNTT.cpp(36): warning C4312: приведение типов: преобразование из "uint32_t" в "const void *" большего размера
+  Engine.cpp
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(45): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(46): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(47): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(48): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+Engine.cpp(5): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  ForwardDraw.cpp
+  LightCompute.cpp
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(45): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(46): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(47): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(48): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+  LightInit.cpp
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(45): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(46): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(47): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(48): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+  LightManager.cpp
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(45): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(46): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(47): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(48): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+  LoadModel.cpp
+LoadModel.cpp(75): warning C4018: <: несоответствие типов со знаком и без знака
+LoadModel.cpp(227): warning C4267: аргумент: преобразование из "size_t" в "uint32_t"; возможна потеря данных
+LoadModel.cpp(265): warning C4267: аргумент: преобразование из "size_t" в "uint32_t"; возможна потеря данных
+LoadModel.cpp(386): warning C4267: инициализация: преобразование из "size_t" в "uint32_t"; возможна потеря данных
+LoadModel.cpp(387): warning C4267: инициализация: преобразование из "size_t" в "uint32_t"; возможна потеря данных
+LoadModel.cpp(413): warning C4267: инициализация: преобразование из "size_t" в "uint32_t"; возможна потеря данных
+LoadModel.cpp(414): warning C4267: инициализация: преобразование из "size_t" в "uint32_t"; возможна потеря данных
+LoadModel.cpp(469): warning C4267: аргумент: преобразование из "size_t" в "uint32_t"; возможна потеря данных
+LoadModel.cpp(532): warning C4018: <: несоответствие типов со знаком и без знака
+LoadModel.cpp(603): warning C4267: аргумент: преобразование из "size_t" в "uint32_t"; возможна потеря данных
+LoadModel.cpp(601): warning C4101: c7: неиспользованная локальная переменная
+LoadModel.cpp(601): warning C4101: c6: неиспользованная локальная переменная
+LoadModel.cpp(657): warning C4018: <: несоответствие типов со знаком и без знака
+  LoadTexture.cpp
+LoadTexture.cpp(60): warning C4800: BOOL: принудительно задано логическое значение "true" или "false" (предупреждение о производительности)
+LoadTexture.cpp(104): warning C4244: аргумент: преобразование "double" в "GLint", возможна потеря данных
+LoadTexture.cpp(68): warning C4101: hr: неиспользованная локальная переменная
+LoadTexture.cpp(167): warning C4267: аргумент: преобразование из "size_t" в "GLsizei"; возможна потеря данных
+LoadTexture.cpp(180): warning C4267: аргумент: преобразование из "size_t" в "GLsizei"; возможна потеря данных
+LoadTexture.cpp(188): warning C4244: аргумент: преобразование "double" в "GLint", возможна потеря данных
+LoadTexture.cpp(214): warning C4267: инициализация: преобразование из "size_t" в "uint32_t"; возможна потеря данных
+LoadTexture.cpp(215): warning C4267: инициализация: преобразование из "size_t" в "uint32_t"; возможна потеря данных
+LoadTexture.cpp(217): warning C4267: аргумент: преобразование из "size_t" в "GLsizei"; возможна потеря данных
+LoadTexture.cpp(224): warning C4244: аргумент: преобразование "double" в "GLint", возможна потеря данных
+LoadTexture.cpp(240): warning C4267: аргумент: преобразование из "size_t" в "GLsizei"; возможна потеря данных
+LoadTexture.cpp(122): warning C4996: 'mbstowcs': This function or variable may be unsafe. Consider using mbstowcs_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdlib.h(920): note:  см. объявление "mbstowcs"
+LoadTexture.cpp(315): warning C4267: =: преобразование из "size_t" в "GLuint"; возможна потеря данных
+LoadTexture.cpp(316): warning C4267: =: преобразование из "size_t" в "GLuint"; возможна потеря данных
+LoadTexture.cpp(341): warning C4244: аргумент: преобразование "double" в "GLint", возможна потеря данных
+LoadTexture.cpp(278): warning C4996: 'mbstowcs': This function or variable may be unsafe. Consider using mbstowcs_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdlib.h(920): note:  см. объявление "mbstowcs"
+  MapResource.cpp
+MapResource.cpp(100): warning C4267: инициализация: преобразование из "size_t" в "unsigned long"; возможна потеря данных
+  Компиляция...
+  MCamera.cpp
+  MeshObject.cpp
+  MTimer.cpp
+  PartilceUpdate.cpp
+PartilceUpdate.cpp(36): warning C4018: <: несоответствие типов со знаком и без знака
+PartilceUpdate.cpp(119): warning C4312: приведение типов: преобразование из "uint32_t" в "const void *" большего размера
+PartilceUpdate.cpp(120): warning C4312: приведение типов: преобразование из "uint32_t" в "const void *" большего размера
+PartilceUpdate.cpp(121): warning C4312: приведение типов: преобразование из "uint32_t" в "const void *" большего размера
+PartilceUpdate.cpp(190): warning C4244: аргумент: преобразование "float" в "GLsizei", возможна потеря данных
+  PointLightManager.cpp
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(45): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(46): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(47): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(48): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+PointLightManager.cpp(41): warning C4267: инициализация: преобразование из "size_t" в "uint32_t"; возможна потеря данных
+PointLightManager.cpp(71): warning C4267: инициализация: преобразование из "size_t" в "uint32_t"; возможна потеря данных
+PointLightManager.cpp(94): warning C4267: return: преобразование из "size_t" в "int32_t"; возможна потеря данных
+  PointLightShadowMap.cpp
+PointLightShadowMap.cpp(104): warning C4267: =: преобразование из "size_t" в "uint32_t"; возможна потеря данных
+PointLightShadowMap.cpp(167): warning C4267: return: преобразование из "size_t" в "uint32_t"; возможна потеря данных
+PointLightShadowMap.cpp(182): warning C4267: аргумент: преобразование из "size_t" в "GLsizei"; возможна потеря данных
+  RenderResources.cpp
+RenderResources.cpp(34): warning C4244: аргумент: преобразование "uint32_t" в "GLfloat", возможна потеря данных
+  RenderResources.cpp(20): note: при компиляции функции-члена "<Нет данных>" класса <Нет данных>
+  RenderResources.cpp(3): note: см. ссылку на создание экземпляров класса шаблон при компиляции "RenderResource::RenderResources<2,1>"
+RenderResources.cpp(47): warning C4244: аргумент: преобразование "uint32_t" в "GLfloat", возможна потеря данных
+  ShaderBase.cpp
+  ShaderComputeTileShading.cpp
+  ShaderDeferredVNT.cpp
+  ShaderDeferredVNTT.cpp
+  ShaderGrass.cpp
+  ShaderMoon.cpp
+  ShaderParticleDraw.cpp
+  ShaderParticleUpdate.cpp
+  ShaderPointLightShadow.cpp
+  ShaderSkyDome.cpp
+ShaderSkyDome.cpp(86): warning C4305: =: усечение из "double" к "float"
+ShaderSkyDome.cpp(89): warning C4305: =: усечение из "double" к "float"
+ShaderSkyDome.cpp(92): warning C4305: =: усечение из "double" к "float"
+ShaderSkyDome.cpp(98): warning C4305: =: усечение из "double" к "float"
+ShaderSkyDome.cpp(117): warning C4305: =: усечение из "double" к "float"
+ShaderSkyDome.cpp(120): warning C4305: =: усечение из "double" к "float"
+ShaderSkyDome.cpp(124): warning C4305: =: усечение из "double" к "float"
+ShaderSkyDome.cpp(127): warning C4305: =: усечение из "double" к "float"
+  ShaderSkyPlane.cpp
+  ShaderSkyPlaneUpdate.cpp
+  ShaderSpotLightShadow.cpp
+  Компиляция...
+  ShaderTestDraw.cpp
+  ShaderUpdateSky.cpp
+ShaderUpdateSky.cpp(76): warning C4305: =: усечение из "double" к "float"
+ShaderUpdateSky.cpp(79): warning C4305: =: усечение из "double" к "float"
+ShaderUpdateSky.cpp(82): warning C4305: =: усечение из "double" к "float"
+ShaderUpdateSky.cpp(88): warning C4305: =: усечение из "double" к "float"
+ShaderUpdateSky.cpp(107): warning C4305: =: усечение из "double" к "float"
+ShaderUpdateSky.cpp(110): warning C4305: =: усечение из "double" к "float"
+ShaderUpdateSky.cpp(114): warning C4305: =: усечение из "double" к "float"
+ShaderUpdateSky.cpp(117): warning C4305: =: усечение из "double" к "float"
+  Shader_Resource_Compiler.cpp
+Shader_Resource_Compiler.cpp(101): warning C4838: преобразование из "uint32_t" в "GLint" требует сужающего преобразования
+  Shader_VNT.cpp
+  Shader_VNTT.cpp
+  SpotLightManager.cpp
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(45): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(46): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(47): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(48): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+SpotLightManager.cpp(202): warning C4267: return: преобразование из "size_t" в "int32_t"; возможна потеря данных
+  SpotLightShadowMap.cpp
+SpotLightShadowMap.cpp(68): warning C4267: =: преобразование из "size_t" в "uint32_t"; возможна потеря данных
+SpotLightShadowMap.cpp(125): warning C4267: return: преобразование из "size_t" в "uint32_t"; возможна потеря данных
+SpotLightShadowMap.cpp(140): warning C4267: аргумент: преобразование из "size_t" в "GLsizei"; возможна потеря данных
+  TestDraw.cpp
+TestDraw.cpp(58): warning C4305: -=: усечение из "double" к "float"
+TestDraw.cpp(59): warning C4305: +=: усечение из "double" к "float"
+TestDraw.cpp(60): warning C4305: -=: усечение из "double" к "float"
+TestDraw.cpp(61): warning C4305: +=: усечение из "double" к "float"
+  WeatherParam.cpp
+WeatherParam.cpp(27): warning C4244: инициализация: преобразование "double" в "int32_t", возможна потеря данных
+WeatherParam.cpp(52): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+WeatherParam.cpp(65): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+WeatherParam.cpp(76): warning C4244: =: преобразование "double" в "uint32_t", возможна потеря данных
+WeatherParam.cpp(99): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+WeatherParam.cpp(110): warning C4244: =: преобразование "double" в "uint32_t", возможна потеря данных
+WeatherParam.cpp(126): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+WeatherParam.cpp(163): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+WeatherParam.cpp(171): warning C4800: int: принудительно задано логическое значение "true" или "false" (предупреждение о производительности)
+WeatherParam.cpp(188): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+  Window.cpp
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(45): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(46): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(47): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(48): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+Window.cpp(247): warning C4244: инициализация: преобразование "long double" в "float", возможна потеря данных
+Window.cpp(296): warning C4244: аргумент: преобразование "LONG" в "float", возможна потеря данных
+Window.cpp(297): warning C4244: аргумент: преобразование "LONG" в "float", возможна потеря данных
+  WinMain.cpp
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(45): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(46): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(47): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+d:\vs2015 project\technologies demo\physically based shading\LightStructs.h(48): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
+LINK : warning LNK4098: библиотека по умолчанию "LIBCMT" противоречит использованию других библиотек; используйте параметр /NODEFAULTLIB:library
+  Создание кода
+  All 1929 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+glew32s.lib(glew.obj) : warning LNK4099: "vc120.pdb" PDB не найден с "glew32s.lib(glew.obj)" или на "D:\VS2015 Project\Technologies Demo\x64\Release\vc120.pdb"; компоновка объекта выполняется как при отсутствии отладочных данных
+  Physically Based Shading.vcxproj -> D:\VS2015 Project\Technologies Demo\x64\Release\Physically Based Shading.exe
+  Physically Based Shading.vcxproj -> D:\VS2015 Project\Technologies Demo\x64\Release\Physically Based Shading.pdb (Full PDB)

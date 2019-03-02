@@ -1,0 +1,39 @@
+#include "Shader_Resource_Compiler.h"
+#include "ShaderBase.h"
+
+#pragma once
+namespace Shader
+{
+	class BlurHorz : public ShaderBase
+	{
+#define mprog_count 1
+		////////////////////////////////////////////////////
+		//static const int mprog_count = 1;//количество программ для текущего шейдера
+		////////////////////////////////////////////////////
+		GLint mSource[mprog_count];
+		GLint mAlbedo[mprog_count];
+		////////////////////////////////////////////////////
+		GLint mBlurRadius[mprog_count];
+		GLint mBlurWeight[mprog_count];
+		////////////////////////////////////////////////////
+		GLint mSourceSlot, mAlbedoSlot;
+		////////////////////////////////////////////////////
+#undef mprog_count
+		////////////////////////////////////////////////////
+		void InitVariable(GLuint program);
+	public:
+		BlurHorz(void);
+		~BlurHorz();
+		////////////////////////////////////////////////////
+		GLuint GetProgram(void);
+		////////////////////////////////////////////////////
+		void setBlurRadius(int32_t radius);
+		void setBlurWeight(int32_t radius, const float *weight);
+		////////////////////////////////////////////////////
+		void setSourceTexture(void);
+		GLuint getAlbedoTextureSlot(void);
+		////////////////////////////////////////////////////
+		void bindTextureToUnit(void);
+	};
+}
+

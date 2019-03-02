@@ -1,0 +1,790 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Файлы исходного кода">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Заголовочные файлы">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{e44267cb-b974-4b62-bcd7-e4b156e4589a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Forward Rendering">
+      <UniqueIdentifier>{ff08b592-56e7-4e86-9b64-6465380ee97c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Forward Rendering\Triangle">
+      <UniqueIdentifier>{e55e9162-bb61-4ae3-9de2-2baca78e59a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Forward Rendering\Triangle\VNTT">
+      <UniqueIdentifier>{8b17d58d-035d-4613-886f-f2ce8afa02d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Forward Rendering\Triangle\VNT">
+      <UniqueIdentifier>{8c2735f4-cee5-4324-a12d-39ae1b4536e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Forward Rendering">
+      <UniqueIdentifier>{0746715b-5bf2-4aed-b72d-c63fcd67f3cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Forward Rendering">
+      <UniqueIdentifier>{043d3ee1-d8c8-46cb-bb92-6c8436d0631a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="to_debug">
+      <UniqueIdentifier>{9d01aa13-3942-4318-b103-e79ca3a2b6fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="to_debug\Test">
+      <UniqueIdentifier>{7268c712-e240-4911-af9d-50fa7b0a04d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Atmosphere">
+      <UniqueIdentifier>{c0b4f33c-5ad8-4d12-a6cd-ced7a4a9f123}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\SkyRendering">
+      <UniqueIdentifier>{7c014876-d1af-47a0-8ba5-811508f0e2ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\SkyRendering">
+      <UniqueIdentifier>{24d6e2c8-bae2-4be9-907c-d966c9cd6092}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Grass">
+      <UniqueIdentifier>{78e1b0e4-be6e-44d8-be0c-8657ebd265dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Rain">
+      <UniqueIdentifier>{bf542156-3d8a-423d-9672-33daa5ad5c39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Rain">
+      <UniqueIdentifier>{06ff0ba3-c18f-4c31-92bb-bfd9f5104ea0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Rain">
+      <UniqueIdentifier>{8dd65e00-f9a4-4b84-ace3-d9827162346f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Rain\tmp">
+      <UniqueIdentifier>{eb7f779e-8ee7-4b1a-bf31-7770b9b8e99e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Deferred Rendering">
+      <UniqueIdentifier>{be030f0f-6991-4743-b936-f18e7a8dec78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Deferred Rendering\Triangle">
+      <UniqueIdentifier>{fb96505d-c9ea-4949-9468-86ceb27be35c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Deferred Rendering\Triangle\VNT">
+      <UniqueIdentifier>{93110622-6c16-482c-b896-65d9fe3e1163}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Deferred Rendering\Triangle\VNTT">
+      <UniqueIdentifier>{33d3b5ec-a912-442b-8463-823a1ec9f88b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Deferred Rendering">
+      <UniqueIdentifier>{7d9e8a72-0420-4ab7-acce-3ea68211d56f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Deferred Rendering">
+      <UniqueIdentifier>{ba8e15b5-f13e-450a-b0d1-9e6a90e63d15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Shading">
+      <UniqueIdentifier>{4c074339-9e07-4109-a659-3e55428d7aa1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Shadow">
+      <UniqueIdentifier>{1325cf7c-94c7-4df8-a563-835d5a0b043b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Shadow\SpotLight">
+      <UniqueIdentifier>{ad2bc492-95c4-4324-af6f-bad631c8842e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Shadow\SpotLight\Triangle">
+      <UniqueIdentifier>{726626db-ac77-4574-b642-fb6933da2ecb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Shadow\SpotLight\Triangle\VNT">
+      <UniqueIdentifier>{50e898ce-e5e0-49a5-8d10-61623aa7acd4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Shadow\SpotLight\Triangle\VNTT">
+      <UniqueIdentifier>{1ad9b63c-6201-40ec-8baf-b0cb70b38c1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Shadow\PointLight">
+      <UniqueIdentifier>{9c845a17-ffa5-475d-86a3-45757a77aebf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Shadow\PointLight\Triangle">
+      <UniqueIdentifier>{881d9d68-e2ca-480a-b96b-4ed3cd8cc0ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Shadow\PointLight\Triangle\VNT">
+      <UniqueIdentifier>{b4aef2df-fed2-41d3-8abe-6d13288ef2f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Shadow\PointLight\Triangle\VNTT">
+      <UniqueIdentifier>{134a93bd-558b-4056-87f7-34ee9ecd71a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Shadow">
+      <UniqueIdentifier>{7ed66dfb-0982-49fb-bf3a-3fbf01579f17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Shadow">
+      <UniqueIdentifier>{1767ddad-8a57-4abf-9312-a175527155c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Shadow\SpotLight">
+      <UniqueIdentifier>{ef8a565f-c89d-477f-addf-3686a991689e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Shadow\SpotLight">
+      <UniqueIdentifier>{6665c733-3f95-4934-b3e6-9309ed7996d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Shadow\PointLight">
+      <UniqueIdentifier>{1cd8ad3e-2d20-485b-a18c-cf66b3591b32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\SSR">
+      <UniqueIdentifier>{060f6735-5e09-4ca3-9e14-7e841df4c76e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Decale">
+      <UniqueIdentifier>{6a870376-a005-4752-9f26-d134c7c92c61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Decals">
+      <UniqueIdentifier>{8eb8a911-434c-4bd9-aa13-9b0a4f592743}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\Blur">
+      <UniqueIdentifier>{c9f12884-88e8-433b-a8f3-bca1a4a9ac33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SSAO">
+      <UniqueIdentifier>{6729a03b-ba34-4491-84f6-460102c24bd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader\SSAO">
+      <UniqueIdentifier>{1bc32cf1-409e-46c0-a87f-3fe8c77b3142}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Window.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="MTimer.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="MCamera.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadModel.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshObject.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_Resource_Compiler.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_Struct.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="MapResource.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceStruct.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadTexture.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_VNT.h">
+      <Filter>Заголовочные файлы\Forward Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="ForwardDraw.h">
+      <Filter>Заголовочные файлы\Forward Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawVNT.h">
+      <Filter>Заголовочные файлы\Forward Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderBase.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader_VNTT.h">
+      <Filter>Заголовочные файлы\Forward Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawVNTT.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="TestDraw.h">
+      <Filter>to_debug</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderTestDraw.h">
+      <Filter>to_debug</Filter>
+    </ClInclude>
+    <ClInclude Include="AtmosphereParameter.h">
+      <Filter>Заголовочные файлы\SkyRendering</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawSky.h">
+      <Filter>Заголовочные файлы\SkyRendering</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawSkyDome.h">
+      <Filter>Заголовочные файлы\SkyRendering</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawSkyQuad.h">
+      <Filter>Заголовочные файлы\SkyRendering</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderSkyDome.h">
+      <Filter>Заголовочные файлы\SkyRendering</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderMoon.h">
+      <Filter>Заголовочные файлы\SkyRendering</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderUpdateSky.h">
+      <Filter>Заголовочные файлы\SkyRendering</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawGrass.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderGrass.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawCloud.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderSkyPlaneUpdate.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderSkyPlane.h">
+      <Filter>Заголовочные файлы\SkyRendering</Filter>
+    </ClInclude>
+    <ClInclude Include="PartilceUpdate.h">
+      <Filter>Заголовочные файлы\Rain</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderParticleDraw.h">
+      <Filter>Заголовочные файлы\Rain</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderParticleUpdate.h">
+      <Filter>Заголовочные файлы\Rain</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawParticles.h">
+      <Filter>Заголовочные файлы\Rain</Filter>
+    </ClInclude>
+    <ClInclude Include="Particle.h">
+      <Filter>Заголовочные файлы\Rain</Filter>
+    </ClInclude>
+    <ClInclude Include="WeatherParam.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderDeferredVNTT.h">
+      <Filter>Заголовочные файлы\Deferred Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderDeferredVNT.h">
+      <Filter>Заголовочные файлы\Deferred Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawGBuffer.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderComputeTileShading.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="DeferredDrawVNT.h">
+      <Filter>Заголовочные файлы\Deferred Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="DeferredDrawVNTT.h">
+      <Filter>Заголовочные файлы\Deferred Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="LightCompute.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderResources.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="ParalelLight.h">
+      <Filter>Заголовочные файлы\Deferred Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="LightManager.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="LightStructs.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="LightInit.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="SpotLightShadowMap.h">
+      <Filter>Заголовочные файлы\Shadow\SpotLight</Filter>
+    </ClInclude>
+    <ClInclude Include="SpotLightManager.h">
+      <Filter>Заголовочные файлы\Shadow\SpotLight</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderSpotLightShadow.h">
+      <Filter>Заголовочные файлы\Shadow\SpotLight</Filter>
+    </ClInclude>
+    <ClInclude Include="PointLightManager.h">
+      <Filter>Заголовочные файлы\Shadow\PointLight</Filter>
+    </ClInclude>
+    <ClInclude Include="PointLightShadowMap.h">
+      <Filter>Заголовочные файлы\Shadow\PointLight</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderPointLightShadow.h">
+      <Filter>Заголовочные файлы\Shadow\PointLight</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderSSR.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="FinalFramebuffer.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawSSR.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="FullScreenQuad.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadAnimationModel.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="DecaleManager.h">
+      <Filter>Заголовочные файлы\Decale</Filter>
+    </ClInclude>
+    <ClInclude Include="DecaleInstance.h">
+      <Filter>Заголовочные файлы\Decale</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderDecale.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawDecale.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderBlurVert.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderBlurHorz.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="BlurManager.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalBlur.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="FramebufferManager.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="DefaultFramebuffer.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawSSAO.h">
+      <Filter>SSAO</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderSSAO.h">
+      <Filter>SSAO</Filter>
+    </ClInclude>
+    <ClInclude Include="Framebuffer.h">
+      <Filter>SSAO</Filter>
+    </ClInclude>
+    <ClInclude Include="FramebufferTexture.h">
+      <Filter>SSAO</Filter>
+    </ClInclude>
+    <ClInclude Include="QuadMesh.h">
+      <Filter>SSAO</Filter>
+    </ClInclude>
+    <ClInclude Include="NoiseTexture2D.h">
+      <Filter>SSAO</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Window.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="WinMain.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="MTimer.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="MCamera.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadModel.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadStructure.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshObject.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_Resource_Compiler.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="MapResource.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadTexture.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_VNT.cpp">
+      <Filter>Файлы исходного кода\Forward Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="ForwardDraw.cpp">
+      <Filter>Файлы исходного кода\Forward Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawVNT.cpp">
+      <Filter>Файлы исходного кода\Forward Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderBase.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader_VNTT.cpp">
+      <Filter>Файлы исходного кода\Forward Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="TestDraw.cpp">
+      <Filter>to_debug</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderTestDraw.cpp">
+      <Filter>to_debug</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderMoon.cpp">
+      <Filter>Файлы исходного кода\SkyRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderUpdateSky.cpp">
+      <Filter>Файлы исходного кода\SkyRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderSkyDome.cpp">
+      <Filter>Файлы исходного кода\SkyRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawSkyQuad.cpp">
+      <Filter>Файлы исходного кода\SkyRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawSkyDome.cpp">
+      <Filter>Файлы исходного кода\SkyRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawSky.cpp">
+      <Filter>Файлы исходного кода\SkyRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="AtmosphereParameter.cpp">
+      <Filter>Файлы исходного кода\SkyRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawGrass.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderGrass.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawCloud.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderSkyPlaneUpdate.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderSkyPlane.cpp">
+      <Filter>Файлы исходного кода\SkyRendering</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawParticles.cpp">
+      <Filter>Файлы исходного кода\Rain</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderParticleUpdate.cpp">
+      <Filter>Файлы исходного кода\Rain</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderParticleDraw.cpp">
+      <Filter>Файлы исходного кода\Rain</Filter>
+    </ClCompile>
+    <ClCompile Include="PartilceUpdate.cpp">
+      <Filter>Файлы исходного кода\Rain</Filter>
+    </ClCompile>
+    <ClCompile Include="WeatherParam.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderDeferredVNTT.cpp">
+      <Filter>Файлы исходного кода\Deferred Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderDeferredVNT.cpp">
+      <Filter>Файлы исходного кода\Deferred Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawGBuffer.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderComputeTileShading.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="DeferredDrawVNT.cpp">
+      <Filter>Файлы исходного кода\Deferred Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="DeferredDrawVNTT.cpp">
+      <Filter>Файлы исходного кода\Deferred Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="LightCompute.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderResources.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="GBufferData.h">
+      <Filter>Заголовочные файлы\Deferred Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="LightManager.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="LightInit.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawVNTT.cpp">
+      <Filter>Файлы исходного кода\Forward Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderPointLightShadow.cpp">
+      <Filter>Файлы исходного кода\Shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="PointLightShadowMap.cpp">
+      <Filter>Файлы исходного кода\Shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="SpotLightManager.cpp">
+      <Filter>Файлы исходного кода\Shadow\SpotLight</Filter>
+    </ClCompile>
+    <ClCompile Include="SpotLightShadowMap.cpp">
+      <Filter>Файлы исходного кода\Shadow\SpotLight</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderSpotLightShadow.cpp">
+      <Filter>Файлы исходного кода\Shadow\SpotLight</Filter>
+    </ClCompile>
+    <ClCompile Include="PointLightManager.cpp">
+      <Filter>Файлы исходного кода\Shadow</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderSSR.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="FinalFramebuffer.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawSSR.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="FullScreenQuad.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadAnimationModel.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="DecaleManager.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="DecaleInstance.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderDecale.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawDecale.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderBlurVert.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderBlurHorz.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="BlurManager.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="GlobalBlur.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="FramebufferManager.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="MainHeader.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="DefaultFramebuffer.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawSSAO.cpp">
+      <Filter>SSAO</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderSSAO.cpp">
+      <Filter>SSAO</Filter>
+    </ClCompile>
+    <ClCompile Include="Framebuffer.cpp">
+      <Filter>SSAO</Filter>
+    </ClCompile>
+    <ClCompile Include="FramebufferTexture.cpp">
+      <Filter>SSAO</Filter>
+    </ClCompile>
+    <ClCompile Include="QuadMesh.cpp">
+      <Filter>SSAO</Filter>
+    </ClCompile>
+    <ClCompile Include="NoiseTexture2D.cpp">
+      <Filter>SSAO</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shader\test\test.ps">
+      <Filter>to_debug\Test</Filter>
+    </None>
+    <None Include="shader\test\test.vs">
+      <Filter>to_debug\Test</Filter>
+    </None>
+    <None Include="shader\Forward Rendering\Triangle\VNT\TriangleNT.ps">
+      <Filter>Shader\Forward Rendering\Triangle\VNT</Filter>
+    </None>
+    <None Include="shader\Forward Rendering\Triangle\VNT\TriangleNT.vs">
+      <Filter>Shader\Forward Rendering\Triangle\VNT</Filter>
+    </None>
+    <None Include="shader\Forward Rendering\Triangle\VNT\TriangleNT_Diff_Reflaction.ps">
+      <Filter>Shader\Forward Rendering\Triangle\VNT</Filter>
+    </None>
+    <None Include="shader\Forward Rendering\Triangle\VNT\TriangleNT_Diffuse.ps">
+      <Filter>Shader\Forward Rendering\Triangle\VNT</Filter>
+    </None>
+    <None Include="shader\Forward Rendering\Triangle\VNTT\TriangleNT_Tang.vs">
+      <Filter>Shader\Forward Rendering\Triangle\VNTT</Filter>
+    </None>
+    <None Include="shader\Forward Rendering\Triangle\VNTT\TriangleNT_Tang_Diff_Reflaction.ps">
+      <Filter>Shader\Forward Rendering\Triangle\VNTT</Filter>
+    </None>
+    <None Include="shader\Forward Rendering\Triangle\VNTT\TriangleNT_Tang_Diffuse.ps">
+      <Filter>Shader\Forward Rendering\Triangle\VNTT</Filter>
+    </None>
+    <None Include="shader\Atmosphere\UpdateQuad.ps">
+      <Filter>Shader\Atmosphere</Filter>
+    </None>
+    <None Include="shader\Atmosphere\UpdateQuad.vs">
+      <Filter>Shader\Atmosphere</Filter>
+    </None>
+    <None Include="shader\Atmosphere\SkyDome.ps">
+      <Filter>Shader\Atmosphere</Filter>
+    </None>
+    <None Include="shader\Atmosphere\SkyDome.vs">
+      <Filter>Shader\Atmosphere</Filter>
+    </None>
+    <None Include="shader\Atmosphere\Moon.ps">
+      <Filter>Shader\Atmosphere</Filter>
+    </None>
+    <None Include="shader\Atmosphere\Moon.vs">
+      <Filter>Shader\Atmosphere</Filter>
+    </None>
+    <None Include="shader\Grass\grass.ps">
+      <Filter>Shader\Grass</Filter>
+    </None>
+    <None Include="shader\Grass\grass.vs">
+      <Filter>Shader\Grass</Filter>
+    </None>
+    <None Include="shader\Atmosphere\SkyPlane.vs">
+      <Filter>Shader\Atmosphere</Filter>
+    </None>
+    <None Include="shader\Atmosphere\SkyPlane.ps">
+      <Filter>Shader\Atmosphere</Filter>
+    </None>
+    <None Include="shader\Atmosphere\SkyPlaneUpdate.ps">
+      <Filter>Shader\Atmosphere</Filter>
+    </None>
+    <None Include="shader\Atmosphere\SkyPlaneUpdate.vs">
+      <Filter>Shader\Atmosphere</Filter>
+    </None>
+    <None Include="shader\Rain\PatricleUpdate.tf.vs">
+      <Filter>Shader\Rain</Filter>
+    </None>
+    <None Include="shader\Rain\ParticleDraw.vs">
+      <Filter>Shader\Rain</Filter>
+    </None>
+    <None Include="shader\Rain\ParticleDraw.ps">
+      <Filter>Shader\Rain</Filter>
+    </None>
+    <None Include="shader\Rain\ParticleDraw.gs">
+      <Filter>Shader\Rain</Filter>
+    </None>
+    <None Include="shader\Rain\PatricleUpdate.tf.gs">
+      <Filter>Shader\Rain\tmp</Filter>
+    </None>
+    <None Include="shader\Deferred Rendering\Triangle\VNT\TriangleNT_Diffuse.ps">
+      <Filter>Shader\Deferred Rendering\Triangle\VNT</Filter>
+    </None>
+    <None Include="shader\Deferred Rendering\Triangle\VNT\TriangleNT.vs">
+      <Filter>Shader\Deferred Rendering\Triangle\VNT</Filter>
+    </None>
+    <None Include="shader\Deferred Rendering\Triangle\VNT\TriangleNT.ps">
+      <Filter>Shader\Deferred Rendering\Triangle\VNT</Filter>
+    </None>
+    <None Include="shader\Deferred Rendering\Triangle\VNT\TriangleNT_Diff_Spec_Reflaction.ps">
+      <Filter>Shader\Deferred Rendering\Triangle\VNT</Filter>
+    </None>
+    <None Include="shader\Deferred Rendering\Triangle\VNT\TriangleNT_Diffuse_Spec.ps">
+      <Filter>Shader\Deferred Rendering\Triangle\VNT</Filter>
+    </None>
+    <None Include="shader\Deferred Rendering\Triangle\VNTT\TriangleNT_Tang_Diffuse.ps">
+      <Filter>Shader\Deferred Rendering\Triangle\VNTT</Filter>
+    </None>
+    <None Include="shader\Deferred Rendering\Triangle\VNTT\TriangleNT_Tang_Diff_Spec.ps">
+      <Filter>Shader\Deferred Rendering\Triangle\VNTT</Filter>
+    </None>
+    <None Include="shader\Deferred Rendering\Triangle\VNTT\TriangleNT_Tang_Diff_Reflaction.ps">
+      <Filter>Shader\Deferred Rendering\Triangle\VNTT</Filter>
+    </None>
+    <None Include="shader\Deferred Rendering\Triangle\VNTT\TriangleNT_Tang.vs">
+      <Filter>Shader\Deferred Rendering\Triangle\VNTT</Filter>
+    </None>
+    <None Include="shader\Shading\shading.compute.glsl">
+      <Filter>Shader\Shading</Filter>
+    </None>
+    <None Include="shader\Shading\shd.glsl">
+      <Filter>Shader\Shading</Filter>
+    </None>
+    <None Include="shader\Shadow\Triangle\VNT\VSTriangleNTShadow.glsl">
+      <Filter>Shader\Shadow\SpotLight\Triangle\VNT</Filter>
+    </None>
+    <None Include="shader\Shadow\Triangle\VNT\PSTriangleNTShadow.glsl">
+      <Filter>Shader\Shadow\SpotLight\Triangle\VNT</Filter>
+    </None>
+    <None Include="shader\Shadow\Triangle\VNT\PSTriangleNTShadowClip.glsl">
+      <Filter>Shader\Shadow\SpotLight\Triangle\VNT</Filter>
+    </None>
+    <None Include="shader\Shadow\Triangle\VNT\GSTriangleNTShadow.glsl">
+      <Filter>Shader\Shadow\SpotLight\Triangle\VNT</Filter>
+    </None>
+    <None Include="shader\Shadow\Triangle\VNTT\GSTriangleNTTShadow.glsl">
+      <Filter>Shader\Shadow\SpotLight\Triangle\VNTT</Filter>
+    </None>
+    <None Include="shader\Shadow\Triangle\VNTT\PSTriangleNTTShadow.glsl">
+      <Filter>Shader\Shadow\SpotLight\Triangle\VNTT</Filter>
+    </None>
+    <None Include="shader\Shadow\Triangle\VNTT\PSTriangleNTTShadowClip.glsl">
+      <Filter>Shader\Shadow\SpotLight\Triangle\VNTT</Filter>
+    </None>
+    <None Include="shader\Shadow\Triangle\VNTT\VSTriangleNTTShadow.glsl">
+      <Filter>Shader\Shadow\SpotLight\Triangle\VNTT</Filter>
+    </None>
+    <None Include="shader\Shadow\PointLight\Triangle\VNT\GSTriangleNTShadow.glsl">
+      <Filter>Shader\Shadow\PointLight\Triangle\VNT</Filter>
+    </None>
+    <None Include="shader\Shadow\PointLight\Triangle\VNT\PSTriangleNTShadowClip.glsl">
+      <Filter>Shader\Shadow\PointLight\Triangle\VNT</Filter>
+    </None>
+    <None Include="shader\Shadow\PointLight\Triangle\VNT\PSTriangleNTShadow.glsl">
+      <Filter>Shader\Shadow\PointLight\Triangle\VNT</Filter>
+    </None>
+    <None Include="shader\Shadow\PointLight\Triangle\VNT\VSTriangleNTShadow.glsl">
+      <Filter>Shader\Shadow\PointLight\Triangle\VNT</Filter>
+    </None>
+    <None Include="shader\SSR\ssr.vertex.glsl">
+      <Filter>Shader\SSR</Filter>
+    </None>
+    <None Include="shader\SSR\ssr.fragment.glsl">
+      <Filter>Shader\SSR</Filter>
+    </None>
+    <None Include="shader\Decals\compute.glsl">
+      <Filter>Shader\Decals</Filter>
+    </None>
+    <None Include="shader\Blur\blur_Y.glsl">
+      <Filter>Shader\Blur</Filter>
+    </None>
+    <None Include="shader\Blur\blur_X.glsl">
+      <Filter>Shader\Blur</Filter>
+    </None>
+    <None Include="shader\SSAO\fragment.glsl">
+      <Filter>Shader\SSAO</Filter>
+    </None>
+    <None Include="shader\SSAO\vertex.glsl">
+      <Filter>Shader\SSAO</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Technologies Demo.rc">
+      <Filter>Файлы ресурсов</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

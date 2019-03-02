@@ -1,0 +1,38 @@
+#version 440 core
+//////////////////////////////////////////////////////////////////////
+#define SHADOW_MAP_MAX_COUNT 16
+//////////////////////////////////////////////////////////////////////
+layout(triangles) in;
+layout(triangle_strip, max_vertices = SHADOW_MAP_MAX_COUNT * 3) out;
+//////////////////////////////////////////////////////////////////////
+in struct GS_IN_BLOCK
+{
+	vec3 vWorldPos;
+	vec2 vTex;
+}vGS_IN[];
+//////////////////////////////////////////////////////////////////////
+//out to pixel variable
+out struct PS_IN_BLOCK 
+{
+	vec2 vTex;
+}vPS_IN;
+//////////////////////////////////////////////////////////////////////
+//uniform variable
+layout ( location = 0 ) uniform mat4 mProjView[SHADOW_MAP_MAX_COUNT];
+layout ( location = 16 ) uniform uint uShadowMapCount;
+//////////////////////////////////////////////////////////////////////
+void main()
+{
+	for (int i = 0; i < uShadowMapCount; i++)
+	{
+		for (int j = 0; j < gl_in.length(); j++)
+		{
+			gl_Layer = i;
+			gl_Position = mProjView[i] * vec4(vGS_IN[j].vWorldPos, 1.0f);
+			vPS_IN.vTex = vGS_IN[j].vTex;
+			EmitVertex();
+		}
+		EndPrimitive();
+	}
+}
+//////////////////////////////////////////////////////////////////////

@@ -1,0 +1,40 @@
+#version 440 core
+////////////////////////////////////////////////////
+//layout(early_fragment_tests) in;
+////////////////////////////////////////////////////
+in struct FS_INPUT
+{
+	vec3 w_pos;
+	vec2 TexCoord;
+} fs_input;
+////////////////////////////////////////////////////
+layout (location = 1) uniform float CloudCover;
+layout (location = 2) uniform float CloudSharpness;
+layout (location = 3) uniform vec3 m_offset;
+////////////////////////////////////////////////////
+layout (location = 4, binding = 0) uniform sampler3D NoiseTexture;
+////////////////////////////////////////////////////
+layout (location = 0) out vec4 CloudColor;
+////////////////////////////////////////////////////
+void main()
+{
+	vec3 offset = m_offset;//m_dir * time;
+    vec4 perlin =	texture(NoiseTexture,		vec3(fs_input.TexCoord, 0.0f)		  +  offset);
+    perlin +=		texture(NoiseTexture,		vec3((fs_input.TexCoord)*2.0f, 0.0f)  +  offset)/2.0f;
+    perlin +=		texture(NoiseTexture,		vec3((fs_input.TexCoord)*4.0f, 0.0f)  +  offset)/4.0f;
+    perlin +=		texture(NoiseTexture,		vec3((fs_input.TexCoord)*8.0f, 0.0f)  +  offset)/8.0f;
+    perlin +=		texture(NoiseTexture,		vec3((fs_input.TexCoord)*16.0f, 0.0f) +  offset)/16.0f;
+    perlin +=		texture(NoiseTexture,		vec3((fs_input.TexCoord)*32.0f, 0.0f) +  offset)/32.0f;
+
+	float nFinal = perlin.r;
+	
+	float c = CloudCover - nFinal;
+    if (c < 0) c = 0;
+ 
+    float CloudDensity = 1.0 - pow(CloudSharpness,c);
+    CloudColor = vec4(CloudDensity);
+	CloudColor.a = pow(CloudDensity, 10.81f);
+}
+
+
+
