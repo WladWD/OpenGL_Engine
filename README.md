@@ -15,5 +15,4 @@ OpenGL Engine develop with SSR, G-Buffer, Rain, SSAO, Tiled Based Shading
 ![alt text](https://github.com/WladWD/OpenGL_Engine/blob/master/12.png "Description goes here")
 ![alt text](https://github.com/WladWD/OpenGL_Engine/blob/master/13.png "Description goes here")
 ![alt text](https://github.com/WladWD/OpenGL_Engine/blob/master/14.png "Description goes here")
-![alt text](https://github.com/WladWD/OpenGL_Engine/blob/master/15.png "Description goes here")
 ![alt text](https://github.com/WladWD/OpenGL_Engine/blob/master/17.png "Description goes here")
