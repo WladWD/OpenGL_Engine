@@ -1,0 +1,54 @@
+https://habrahabr.ru/company/mailru/blog/248873/
+http://www.trentreed.net/blog/physically-based-shading-and-image-based-lighting/
+https://chetanjags.wordpress.com/2015/08/26/image-based-lighting/
+http://steps3d.narod.ru/tutorials/lighting-tutorial.html
+https://learnopengl.com/#!PBR/Theory
+
+
+lerp(ambientDiffuseLight + directDiffuseLight, ambientSpecularLight + directSpecularLight, reflectivity) 
+
+http://blog.selfshadow.com/publications/s2014-shading-course/
+
+
+
+http://www.gamedev.ru/code/forum/?id=200243
+http://www.gamedev.ru/code/forum/?id=165533&page=2
+http://www.gamedev.ru/code/forum/?id=196041
+http://www.gamedev.ru/code/forum/?id=204914
+https://github.com/urho3d/Urho3D/pull/1295
+http://www.gamedev.ru/code/forum/?id=222360
+http://www.gamedev.ru/code/forum/?id=200168
+http://graphicrants.blogspot.ru/2013/08/specular-brdf-reference.html
+http://www.gamedev.ru/code/forum/?id=204108
+
+
+code size
+https://github.com/JoeyDeVries/LearnOpenGL  - this -> https://learnopengl.com/#!PBR/Lighting
+https://github.com/TReed0803/QtOpenGL/blob/master/resources/shaders/gbuffer/viewport.frag  - this -> http://www.trentreed.net/blog/physically-based-shading-and-image-based-lighting/
+
+resource image
+http://freepbr.com/materials/mahogany-pbr-floorboards-1-flb1/
+
+
+
+1)https://habrahabr.ru/company/mailru/blog/248873/
+2)https://learnopengl.com/#!PBR/Theory
+3)http://www.trentreed.net/blog/physically-based-shading-and-image-based-lighting/
+4)http://steps3d.narod.ru/tutorials/lighting-tutorial.html
+5)http://steps3d.narod.ru/tutorials/brdf-tutorial.html
+
+
+
+http://brabl.com/ibl/
+https://graphics.rwth-aachen.de:9000/Glow/glow-extras/blob/7a384a8bf8e8b3fb0e888385a2efc34b6a0007bb/material/shader/glow-material/precalc.glsl
+http://holger.dammertz.org/stuff/notes_HammersleyOnHemisphere.html  ---- READ 0 
+https://www.shadertoy.com/view/XlKSDz
+http://www.trentreed.net/blog/screen-space-ambient-occlusion/
+https://forum.unity3d.com/threads/bitwise-operation-hammersley-point-sampling-is-there-an-alternate-method.200000/
+https://www.gamedev.net/topic/658769-ue4-ibl-glsl/
+https://github.com/McNopper/OpenGL/blob/master/Example32/shader/brdf.frag.glsl
+https://github.com/nxxcxx/Hammersley-Importance-Sampling/blob/master/src/partials/setup.js
+
+http://damart3d.blogspot.com/2016/04/writing-shaders-for-substance-painter.html
+http://damart3d.blogspot.com/2016/12/hdr-vs-ldr-image-based-lighting.html
+https://github.com/McNopper/OpenGL

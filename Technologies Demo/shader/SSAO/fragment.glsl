@@ -48,9 +48,7 @@ void main() {
 	mat4 invTranfView = transpose(inverse(mView));
 	vec3 viewPosition = getViewPosition(vertex.tex0);
 	vec3 normal = vec3(invTranfView * vec4(texture(gNormal, vertex.tex0).xyz, 0.0f));
-	//vec3 randomVec = normalize(vec3(mInvView * vec4(texture(gNoise, vertex.tex0 * noiseScale).xyz, 1.0f)));
 	vec3 randomVec = normalize(texture(gNoise, vertex.tex0 * noiseScale).xyz);
-		//vec3(mInvView * vec4(0.0, 1.0, 0.0, 0.0));// normalize(texture(gNoise, vertex.tex0 * noiseScale).xyz);
 
 	vec3 tangent = normalize(randomVec - normal * dot(randomVec, normal));
 	vec3 bitangent = cross(normal, tangent);
@@ -71,6 +69,5 @@ void main() {
 	}
 	occlusion = 1.0f - (occlusion / float(kernelSize));
 
-	//vec4(texture(gDepth, vertex.tex0, 1.0) / 2.0);//vec4(vec3(mInvView * vec4(viewPosition, 1.0f)), 1.0f);//texture(gNormal, vertex.tex0);//
 	framebufferColor = vec4(occlusion);
 }

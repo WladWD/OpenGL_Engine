@@ -1,0 +1,6 @@
+https://dirkiek.wordpress.com/2015/05/31/physically-based-rendering-and-image-based-lighting/
+https://placeholderart.wordpress.com/2015/07/28/implementation-notes-runtime-environment-map-filtering-for-image-based-lighting/
+
+https://jmonkeyengine.github.io/wiki/jme3/advanced/pbr_part3.html
+https://github.com/derkreature/IBLBaker/tree/master/data/shadersD3D11
+http://www.igorsklyar.com/system/documents/papers/4/fiscourse.comp.pdf
