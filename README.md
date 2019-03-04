@@ -1,5 +1,5 @@
 # OpenGL Engine
-OpenGL Engine develop with SSR, G-Buffer, Rain, SSAO, Tiled Based Shading
+OpenGL Engine develop with SSR, G-Buffer, Rain Simulation, SSAO, Tiled Based Shading, OmniDirectional Shadow, Directional Shadow, Atmospheric Scattering
 ![alt text](https://github.com/WladWD/OpenGL_Engine/blob/master/2.png "Description goes here")
 ![alt text](https://github.com/WladWD/OpenGL_Engine/blob/master/1.png "Description goes here")
 
