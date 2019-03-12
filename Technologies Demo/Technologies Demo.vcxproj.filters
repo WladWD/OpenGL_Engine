@@ -145,6 +145,9 @@
     <Filter Include="Shader\SSAO">
       <UniqueIdentifier>{1bc32cf1-409e-46c0-a87f-3fe8c77b3142}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shader\SSAO\GaussianBlur">
+      <UniqueIdentifier>{01ddc2e6-6c05-4f97-bffd-18faf885be3a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window.h">
@@ -381,6 +384,12 @@
     <ClInclude Include="NoiseTexture2D.h">
       <Filter>SSAO</Filter>
     </ClInclude>
+    <ClInclude Include="ShaderGaussianBlur.h">
+      <Filter>SSAO</Filter>
+    </ClInclude>
+    <ClInclude Include="GaussianBlur.h">
+      <Filter>SSAO</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp">
@@ -611,6 +620,12 @@
     <ClCompile Include="NoiseTexture2D.cpp">
       <Filter>SSAO</Filter>
     </ClCompile>
+    <ClCompile Include="ShaderGaussianBlur.cpp">
+      <Filter>SSAO</Filter>
+    </ClCompile>
+    <ClCompile Include="GaussianBlur.cpp">
+      <Filter>SSAO</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="shader\test\test.ps">
@@ -781,6 +796,16 @@
     <None Include="shader\SSAO\vertex.glsl">
       <Filter>Shader\SSAO</Filter>
     </None>
+    <None Include="shader59.bin">
+      <Filter>Файлы ресурсов</Filter>
+    </None>
+    <None Include="shader\SSAO\GaussianBlur\vertex.glsl">
+      <Filter>Shader\SSAO\GaussianBlur</Filter>
+    </None>
+    <None Include="shader\SSAO\GaussianBlur\fragment.glsl">
+      <Filter>Shader\SSAO\GaussianBlur</Filter>
+    </None>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Technologies Demo.rc">

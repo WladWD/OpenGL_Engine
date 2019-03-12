@@ -2,8 +2,12 @@
 #include "MCamera.h"
 #include "ShaderSSAO.h"
 #include "NoiseTexture2D.h"
+#include "GaussianBlur.h"
 #include "QuadMesh.h"
+#include "Framebuffer.h"
 #include <random>
+
+using namespace SSAO;
 
 SSAO::DrawSSAO::DrawSSAO(const MCamera::Camera * camera): camera(camera) {
 	shader = std::make_unique<Shader::ShaderSSAO>();
@@ -19,18 +23,20 @@ SSAO::DrawSSAO::DrawSSAO(const MCamera::Camera * camera): camera(camera) {
 			1.0f
 		);
 	});
+	framebuffer = std::make_unique<Framebuffer>(camera->GetWeight(), camera->GetHeight(), 
+		std::vector<FramebufferTexture::FramebufferTextureFormat>{ {GL_RGBA8, GL_RGBA, GL_UNSIGNED_BYTE} });
 	mesh = std::make_unique<QuadMesh>();
+	drawBlur = std::make_unique<SSAO::GaussianBlur>(camera->GetWeight(), camera->GetHeight());
 	initializeRandomVector();
 }
 
-SSAO::DrawSSAO::~DrawSSAO() {
+SSAO::DrawSSAO::~DrawSSAO() { }
 
-}
-
-void SSAO::DrawSSAO::draw(GLuint depth, GLuint normal, GLuint specular, GLuint diffuse) {
+void SSAO::DrawSSAO::computeSSAO(GLuint depth, GLuint normal) {
 	//glDisable(GL_CULL_FACE);
 	//glDisable(GL_DEPTH_TEST);
 	//glDepthMask(GL_FALSE);
+	framebuffer->bind();
 
 	glUseProgram(shader->getProgram());
 	mesh->bindVAO();
@@ -38,10 +44,10 @@ void SSAO::DrawSSAO::draw(GLuint depth, GLuint normal, GLuint specular, GLuint d
 	glm::mat4 world = glm::mat4(1.0f);
 
 	shader->bindDepthTexture(depth);
-	shader->bindDiffuseTexture(diffuse);
+	//shader->bindDiffuseTexture(diffuse);
 	shader->bindNoiseTexture(noiseTextre->getTexture());
 	shader->bindNormalTexture(normal);
-	shader->bindSpecularTexture(specular);
+	//shader->bindSpecularTexture(specular);
 	shader->setInvProj(glm::inverse(camera->GetProjMatrix()));
 	shader->setInvProjView(glm::inverse(camera->GetProjViewMatrix()));
 	shader->setInvProjViewWorld(glm::inverse(camera->GetProjViewMatrix() * world));
@@ -58,6 +64,15 @@ void SSAO::DrawSSAO::draw(GLuint depth, GLuint normal, GLuint specular, GLuint d
 
 	glBindVertexArray(0);
 	glUseProgram(0);
+
+	framebuffer->unbind();
+	framebuffer->updateMip();
+
+	drawBlur->makeBlur(framebuffer->getTexture(0)->getTexture(), 1.0);
+}
+
+GLuint DrawSSAO::getSSAOTexture() const {
+	return drawBlur->getBlurTexture();// framebuffer->getTexture(0)->getTexture();
 }
 
 void SSAO::DrawSSAO::initializeRandomVector() {

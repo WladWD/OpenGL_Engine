@@ -1,10 +1,7 @@
-﻿  FinalFramebuffer.cpp
-  Engine.cpp
+﻿  LightInit.cpp
 d:\vs2015 project\technologies demo\technologies demo\lightstructs.h(45): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
 d:\vs2015 project\technologies demo\technologies demo\lightstructs.h(46): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
 d:\vs2015 project\technologies demo\technologies demo\lightstructs.h(47): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
 d:\vs2015 project\technologies demo\technologies demo\lightstructs.h(48): warning C4244: =: преобразование "float" в "uint8_t", возможна потеря данных
-d:\vs2015 project\technologies demo\technologies demo\engine.cpp(5): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-  Создание кода...
   Technologies Demo.vcxproj -> D:\VS2015 Project\Technologies Demo\x64\Debug\Technologies Demo.exe
   Technologies Demo.vcxproj -> D:\VS2015 Project\Technologies Demo\x64\Debug\Technologies Demo.pdb (Full PDB)

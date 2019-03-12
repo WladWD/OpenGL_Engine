@@ -22,6 +22,7 @@ layout(location = 12, binding = 8) uniform samplerBuffer g_SpotDirectionRadiusCo
 		GLint g_vCameraPos[mprog_count];
 		////////////////////////////////////////////////////
 		//in
+		GLint ssaoTexture[mprog_count];
 		GLint g_depth[mprog_count];
 		GLint g_normal[mprog_count];
 		GLint g_diffuse[mprog_count];
@@ -53,7 +54,7 @@ layout(location = 12, binding = 8) uniform samplerBuffer g_SpotDirectionRadiusCo
 		GLint gPointLightShadowMap[mprog_count];
 		GLint g_mNF[mprog_count];
 		////////////////////////////////////////////////////
-		GLint g_depth_slot, g_normal_slot, g_diffuse_slot, g_specular_slot;// , g_PBR_slot;
+		GLint g_depth_slot, g_normal_slot, g_diffuse_slot, g_specular_slot, g_ssao_slot;// , g_PBR_slot;
 		GLint g_pointlight_color_slot, g_pointlight_pos_radius_slot;
 		GLint g_spotlight_color_slot, g_spotlight_bounding_sphere_pos_radius_slot, g_spotlight_data;
 		GLint gout_diff_slot, gout_spec_slot;
@@ -81,6 +82,7 @@ layout(location = 12, binding = 8) uniform samplerBuffer g_SpotDirectionRadiusCo
 		void SetSpotLightShadowMatrixes(const glm::mat4 matrix[], uint32_t count);
 		void SetSpotLightShadowMap(void);
 		////////////////////////////////////////////////////
+		void bindSSAO(GLint texture) const;
 		void SetDepthTexture(void);
 		void SetNormalTexture(void);
 		void SetDiffuseTexture(void);

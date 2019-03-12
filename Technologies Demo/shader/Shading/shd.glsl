@@ -63,6 +63,8 @@ layout(location = POINTLIGHT_SHADOW_POS, binding = 10) uniform samplerCubeArrayS
 //layout(location = POINTLIGHT_SHADOW_POS + 1) uniform mat4 g_mProjViewPoint[MAX_NUM_SHADOWCASTING_POINTS];
 layout(location = POINTLIGHT_SHADOW_POS + 1) uniform vec4 g_mNF[MAX_NUM_SHADOWCASTING_POINTS];
 ////////////////////////////////////////////////////
+layout(location = POINTLIGHT_SHADOW_POS + MAX_NUM_SHADOWCASTING_POINTS + 1, binding = 11) uniform sampler2D ssaoTexture;
+////////////////////////////////////////////////////
 //output data
 layout(location = 4, binding = 0, rgba8) uniform image2D g_albedro;
 layout(location = 5, binding = 1, rgba8) uniform image2D g_spec_albedro;
@@ -504,12 +506,16 @@ void main()
 			}
 		}
 
-
+		//float ambientPower = 0.3f;
+		vec4 ssaoValue = texelFetch(ssaoTexture, globalIdx.xy, 0);
 		vec4 g_AmbientColorUp = vec4(0.013f, 0.015f, 0.050f, 1.0f);
 		vec4 g_AmbientColorDown = vec4(0.0013f, 0.0015f, 0.0050f, 1.0f);
 		float fAmbientBlend = 0.5f * vNorm.y + 0.5;
 		vec4 Ambient = g_AmbientColorUp * fAmbientBlend + g_AmbientColorDown * (1 - fAmbientBlend);
-		vec4 DiffuseAndAmbient = AccumDiffuse + Ambient;
+		//Ambient = ssaoValue * AccumDiffuse * ambientPower;
+		Ambient *= ssaoValue;
+
+		vec4 DiffuseAndAmbient = AccumDiffuse + Ambient;// *ssaoValue * ambientPower;
 
 		vec4 DiffuseTex = texelFetch(g_diffuse, globalIdx.xy, 0);
 		vec4 SpecularTex = texelFetch(g_specular, globalIdx.xy, 0);
@@ -525,6 +531,15 @@ void main()
 		//vec4 Result = DiffuseTex * (DiffuseAndAmbient + AccumSpecular * fSpecMask * SpecularTex);
 		vec4 ResultDiffuseAndAmbient = DiffuseTex * DiffuseAndAmbient;
 		vec4 ResultSpecular = DiffuseTex * AccumSpecular * fSpecMask * SpecularTex;
+
+		
+		/*ResultDiffuseAndAmbient = Ambient;
+		ResultSpecular = vec4(0.0f);*/
+		//TEST start
+		//ResultSpecular = vec4(0.0f);// ssaoValue;
+		//ResultDiffuseAndAmbient = ssaoValue;
+		//TEST end
+
 
 		//ResultDiffuseAndAmbient = tmp + ResultDiffuseAndAmbient * 0.1f;
 		// vec4(pow(texelFetch(gSpotLightShadowMap, ivec3(globalIdx.xy, 5), 0).r

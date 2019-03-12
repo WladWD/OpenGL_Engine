@@ -155,6 +155,7 @@
     <ClInclude Include="Framebuffer.h" />
     <ClInclude Include="FramebufferManager.h" />
     <ClInclude Include="FramebufferTexture.h" />
+    <ClInclude Include="GaussianBlur.h" />
     <ClInclude Include="GlobalBlur.h" />
     <ClInclude Include="NoiseTexture2D.h" />
     <ClInclude Include="QuadMesh.h" />
@@ -202,6 +203,7 @@
     <ClInclude Include="ShaderDecale.h" />
     <ClInclude Include="ShaderDeferredVNT.h" />
     <ClInclude Include="ShaderDeferredVNTT.h" />
+    <ClInclude Include="ShaderGaussianBlur.h" />
     <ClInclude Include="ShaderGrass.h" />
     <ClInclude Include="ShaderMoon.h" />
     <ClInclude Include="ShaderParticleDraw.h" />
@@ -235,6 +237,7 @@
     <ClCompile Include="Framebuffer.cpp" />
     <ClCompile Include="FramebufferManager.cpp" />
     <ClCompile Include="FramebufferTexture.cpp" />
+    <ClCompile Include="GaussianBlur.cpp" />
     <ClCompile Include="GlobalBlur.cpp" />
     <ClCompile Include="MainHeader.h" />
     <ClCompile Include="NoiseTexture2D.cpp" />
@@ -280,6 +283,7 @@
     <ClCompile Include="ShaderDecale.cpp" />
     <ClCompile Include="ShaderDeferredVNT.cpp" />
     <ClCompile Include="ShaderDeferredVNTT.cpp" />
+    <ClCompile Include="ShaderGaussianBlur.cpp" />
     <ClCompile Include="ShaderGrass.cpp" />
     <ClCompile Include="ShaderMoon.cpp" />
     <ClCompile Include="ShaderParticleDraw.cpp" />
@@ -306,6 +310,8 @@
     <ClCompile Include="WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+    <None Include="shader59.bin" />
     <None Include="shader\Atmosphere\Moon.ps" />
     <None Include="shader\Atmosphere\Moon.vs" />
     <None Include="shader\Atmosphere\SkyDome.ps" />
@@ -357,6 +363,8 @@
     <None Include="shader\Shadow\Triangle\VNT\PSTriangleNTShadowClip.glsl" />
     <None Include="shader\Shadow\Triangle\VNT\VSTriangleNTShadow.glsl" />
     <None Include="shader\SSAO\fragment.glsl" />
+    <None Include="shader\SSAO\GaussianBlur\fragment.glsl" />
+    <None Include="shader\SSAO\GaussianBlur\vertex.glsl" />
     <None Include="shader\SSAO\vertex.glsl" />
     <None Include="shader\SSR\ssr.fragment.glsl" />
     <None Include="shader\SSR\ssr.vertex.glsl" />

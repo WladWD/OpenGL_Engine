@@ -18,7 +18,7 @@ public:
 	~FramebufferTexture();
 
 	void resize(uint32_t width, uint32_t height);
-
+	void updateMip() const;
 	GLuint getTexture() const;
 
 protected:

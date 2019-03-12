@@ -36,6 +36,7 @@ Shader::ShaderComputeTileShading::ShaderComputeTileShading(void) : ShaderBase(1,
 
 	g_smSpotShadow = 9;
 	g_smPointShadow = 10;
+	g_ssao_slot = 11;
 
 	gout_diff_slot = 0;
 	gout_spec_slot = 1;
@@ -219,6 +220,12 @@ GLuint Shader::ShaderComputeTileShading::GetProgram(void)
 	return program[0];
 }
 
+void Shader::ShaderComputeTileShading::bindSSAO(GLint texture) const {
+	correct_programm
+	glActiveTexture(GL_TEXTURE0 + g_ssao_slot);
+	glBindTexture(GL_TEXTURE_2D, texture);
+}
+
 void Shader::ShaderComputeTileShading::SetDepthTexture(void)
 {
 	correct_programm
@@ -297,6 +304,7 @@ void Shader::ShaderComputeTileShading::BindTextureToUnit(void)
 	mcheck(g_normal) glUniform1i(g_normal[current_program], g_normal_slot);
 	mcheck(g_diffuse) glUniform1i(g_diffuse[current_program], g_diffuse_slot);
 	mcheck(g_specular) glUniform1i(g_specular[current_program], g_specular_slot);
+	mcheck(ssaoTexture) glUniform1i(ssaoTexture[current_program], g_ssao_slot);
 	
 	mcheck(g_PointColor) glUniform1i(g_PointColor[current_program], g_pointlight_color_slot);
 	mcheck(g_PointPositionRadius) glUniform1i(g_PointPositionRadius[current_program], g_pointlight_pos_radius_slot);

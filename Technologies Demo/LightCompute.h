@@ -32,7 +32,7 @@ namespace ComputeTileShading
 		LightCompute(LightManager *light_manager, MCamera::Camera *camera, RenderResource::RenderResources<2, 1> *render_resources, const DeferredRendering::GBufferData &gbuffer_data);
 		~LightCompute();
 
-		void Draw(const Atmosphere::MoonLightingParam &light_moon, const Atmosphere::GlobalLightingParam &light_sun);
+		void Draw(const Atmosphere::MoonLightingParam &light_moon, const Atmosphere::GlobalLightingParam &light_sun, GLuint ssao);
 	};
 }
 //http://stackoverflow.com/questions/21384972/sample-depth-buffer-in-opengl-compute-shader

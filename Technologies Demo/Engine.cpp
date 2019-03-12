@@ -148,18 +148,18 @@ void MEngine::Engine::Draw(float delta_ms)
 	draw_g_buffer->Draw();
 
 	mDrawDecale->Draw(camera, draw_g_buffer->GetBufferData());
-	light_compute->Draw(atmosphere_parameter->GetGlobalLightingParameterMoon(), atmosphere_parameter->GetGlobalLightingParameter());
 
 	glBindFramebuffer(GL_READ_FRAMEBUFFER, 0);
 	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0);
 	glDrawBuffer(GL_BACK);
-	
-	mFinalFrame->BingFramebuffer();
 
 	const DeferredRendering::GBufferData mdraw = draw_g_buffer->GetBufferData();
+	drawSSAO->computeSSAO(mdraw.g_buffer_depth, mdraw.g_buffer_textures[0]);
 
-	drawSSAO->draw(mdraw.g_buffer_depth, mdraw.g_buffer_textures[0], mdraw.g_buffer_textures[2], mdraw.g_buffer_textures[1]);
-	/*mDrawSSR->DrawSSRData(mdraw.g_buffer_depth, render_resources->GetDiffuseTexture(),
+	light_compute->Draw(atmosphere_parameter->GetGlobalLightingParameterMoon(), atmosphere_parameter->GetGlobalLightingParameter(), drawSSAO->getSSAOTexture());
+	mFinalFrame->BingFramebuffer();
+
+	mDrawSSR->DrawSSRData(mdraw.g_buffer_depth, render_resources->GetDiffuseTexture(),
 		mdraw.g_buffer_depth, mdraw.g_buffer_textures[0], render_resources->GetDiffuseTexture(), render_resources->GetSpecularTexture(),
 		camera->GetProjViewMatrix());
 	draw_particles->Draw(weather_param->GetWind(),
@@ -167,7 +167,7 @@ void MEngine::Engine::Draw(float delta_ms)
 	draw_sky->Draw(camera->GetProjViewMatrix(), camera->GetPosition(), &atmosphere_parameter->GetGlobalLightingParameter());
 	draw_cloud->Draw(timer->GetTimeMilliSecond(), camera->GetProjViewMatrix(),
 		&atmosphere_parameter->GetGlobalLightingParameter(), &atmosphere_parameter->GetGlobalLightingParameterMoon(),
-		weather_param->GetCloudDensity(), weather_param->GetCloudGrayScale());*/
+		weather_param->GetCloudDensity(), weather_param->GetCloudGrayScale());
 
 	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0);
 	glBindFramebuffer(GL_READ_FRAMEBUFFER, mFinalFrame->GetCurrentFramebuffer());

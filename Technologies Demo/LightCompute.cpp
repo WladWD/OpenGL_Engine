@@ -39,7 +39,7 @@ ComputeTileShading::LightCompute::~LightCompute()
 	delete shader_tile_shading;
 }
 
-void ComputeTileShading::LightCompute::Draw(const Atmosphere::MoonLightingParam &light_moon, const Atmosphere::GlobalLightingParam &light_sun)
+void ComputeTileShading::LightCompute::Draw(const Atmosphere::MoonLightingParam &light_moon, const Atmosphere::GlobalLightingParam &light_sun, GLuint ssao)
 {
 	glUseProgram(shader_tile_shading->GetProgram());
 	/*
@@ -91,6 +91,7 @@ void ComputeTileShading::LightCompute::Draw(const Atmosphere::MoonLightingParam 
 	glBindTexture(GL_TEXTURE_BUFFER, spot_texture_buffer.gBoundingSphereCenterRadius);
 	shader_tile_shading->SetSpotLightData();
 	glBindTexture(GL_TEXTURE_BUFFER, spot_texture_buffer.gSpotLightDirertionCosineAngle);
+	shader_tile_shading->bindSSAO(ssao);
 
 	ComputeTileShading::ParalelLight light_data;
 

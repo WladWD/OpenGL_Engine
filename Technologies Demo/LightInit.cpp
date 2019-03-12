@@ -56,6 +56,7 @@ void ComputeTileShading::LightInit::SInit(LightManager *light_data)
 	light_data->AddPointLight(glm::vec4(600.0f, 660.0f, -30.0f, 800.0f), glm::vec4(0.5f, 0.5f, 0.8f, 4.0f) * mPointLightPower);
 	light_data->AddPointLight(glm::vec4(-700.0f, 660.0f, 80.0f, 800.0f), glm::vec4(0.8f, 0.5f, 0.5f, 4.0f) * mPointLightPower);
 
+	//light_data->AddPointLight(glm::vec4(1000.0f, 240.0f, -40.0f, 800.0f), glm::vec4(0.8f, 0.9f, 1.0f, 2.0f) * mPointLightPower);
 	///////////////////////////////////////////////////////////////////////////////////////////
 	light_data->SetPointLightToBuffer();
 	///////////////////////////////////////////////////////////////////////////////////////////

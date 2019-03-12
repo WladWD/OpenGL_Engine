@@ -25,6 +25,12 @@ void FramebufferTexture::resize(uint32_t width, uint32_t height) {
 	initialize(width, height);
 }
 
+void SSAO::FramebufferTexture::updateMip() const {
+	glBindTexture(GL_TEXTURE_2D, texture);
+	glGenerateMipmap(GL_TEXTURE_2D);
+	glBindTexture(GL_TEXTURE_2D, 0);
+}
+
 GLuint FramebufferTexture::getTexture() const {
 	return texture;
 }

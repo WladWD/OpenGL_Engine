@@ -30,4 +30,4 @@ namespace Draw
 //shader
 //fullscreen quad buffer
 //camera
-//and prev draw set finalframebuffer
+//and prev computeSSAO set finalframebuffer

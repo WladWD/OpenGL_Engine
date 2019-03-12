@@ -15,6 +15,7 @@
 #include "FinalFramebuffer.h"
 #include "DrawDecale.h"
 #include "DrawSSAO.h"
+#include "GaussianBlur.h"
 
 #pragma once
 namespace MEngine

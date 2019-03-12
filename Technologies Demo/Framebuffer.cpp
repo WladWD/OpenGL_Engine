@@ -12,29 +12,53 @@ Framebuffer::Framebuffer(uint32_t width, uint32_t height,
 		this->textures.push_back(texture);
 		attachment.push_back(GL_COLOR_ATTACHMENT0 + i);
 	}
+	initialize();
 }
 
 Framebuffer::Framebuffer(uint32_t width, uint32_t height,
 	std::vector<FramebufferTexture::FramebufferTextureFormat> texturesFormats,
-	FramebufferTexture::FramebufferTextureFormat depthFormat): 
-	Framebuffer(width, height, texturesFormats) {
+	FramebufferTexture::FramebufferTextureFormat depthFormat) {
+
+	this->textures.reserve(textures.size() + 1);
+	for (size_t i = 0; i < texturesFormats.size(); ++i) {
+		auto& texture = std::make_shared<FramebufferTexture>(texturesFormats[i], width, height);
+		this->textures.push_back(texture);
+		attachment.push_back(GL_COLOR_ATTACHMENT0 + i);
+	}
 
 	auto& texture = std::make_shared<FramebufferTexture>(depthFormat, width, height);
 	this->textures.push_back(texture);
 	attachment.push_back(GL_DEPTH_ATTACHMENT);
+	initialize();
 }
 
 Framebuffer::~Framebuffer() {
 	clear();
 }
 
-void Framebuffer::bindBuffer() const {
+void Framebuffer::bind() const {
 	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, framebuffer);
 	glDrawBuffers(attachment.size(), attachment.data());
 }
 
+void Framebuffer::unbind() const {
+	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0);
+	glBindFramebuffer(GL_READ_FRAMEBUFFER, 0);
+	glDrawBuffer(GL_BACK);
+}
+
 GLuint Framebuffer::getFramebuffer() const {
 	return framebuffer;
+}
+
+std::shared_ptr<FramebufferTexture> SSAO::Framebuffer::getTexture(uint32_t idx) const {
+	return textures[idx];
+}
+
+void SSAO::Framebuffer::updateMip() const {
+	for (auto& texture : textures) {
+		texture->updateMip();
+	}
 }
 
 void Framebuffer::resize(uint32_t width, uint32_t height) {

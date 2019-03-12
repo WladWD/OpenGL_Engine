@@ -68,6 +68,6 @@ void main() {
 		occlusion += (sampleDepth >= samplePosition.z + depthBias ? 1.0f : 0.0f) * rangeCheck;
 	}
 	occlusion = 1.0f - (occlusion / float(kernelSize));
-
+	occlusion = pow(occlusion, 2.0f);
 	framebufferColor = vec4(occlusion);
 }
